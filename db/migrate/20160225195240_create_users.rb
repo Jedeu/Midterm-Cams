@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password
       t.integer :rating
       t.integer :balance
+      t.integer :hourly_rate
       t.text :bio
       t.time :time_taught
       t.boolean :has_taught, default: false

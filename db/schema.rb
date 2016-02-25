@@ -11,13 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225195240) do
+ActiveRecord::Schema.define(version: 20160225215215) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "type"
+  end
+
+  create_table "categorytypes", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "user_id"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string   "review_title"
+    t.text     "review_content"
+    t.integer  "review_rating"
+    t.integer  "teacher_id"
+    t.integer  "user_id"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.time     "duration"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "password"
     t.integer  "rating"
     t.integer  "balance"
+    t.integer  "hourly_rate"
     t.text     "bio"
     t.time     "time_taught"
     t.boolean  "has_taught",  default: false
