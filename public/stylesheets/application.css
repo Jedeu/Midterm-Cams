@@ -15,6 +15,10 @@
   color: #444;
 }
 
+/*.resizer>.card {
+  width: 1300px;
+}*/
+
 nav ul a:hover {
   background: none;
 }
@@ -166,6 +170,12 @@ nav ul a:hover {
   unicode-bidi: bidi-override;
   direction: rtl;
 }
+
+.input-field > .rating {
+  margin-top: 2rem;
+  display: inline-block;
+}
+
 .rating > span {
   display: inline-block;
   position: relative;
@@ -179,3 +189,8 @@ nav ul a:hover {
   position: absolute;
 }
 
+/* ************* Review page ************* */
+
+.invoice-padding {
+  padding: 20px !important; 
+}

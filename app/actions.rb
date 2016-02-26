@@ -9,3 +9,7 @@ get '/sessions/new' do
   @session.save
   erb :'/sessions/new'
 end
+
+get '/reviews/index' do
+  erb :'/reviews/index'
+end
