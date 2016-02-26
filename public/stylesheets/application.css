@@ -15,6 +15,10 @@
   color: #444;
 }
 
+/*.orange {
+  color: #ffab40 !important;
+}*/
+
 nav ul a:hover {
   background: none;
 }
@@ -33,6 +37,12 @@ nav ul a:hover {
 
 #confirm-join-room-span {
   visibility: hidden !important;
+}
+
+.auto-margin {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
 }
 /* ************* Teacher Modal ************* */
 
@@ -179,3 +189,75 @@ nav ul a:hover {
   position: absolute;
 }
 
+/* ************* Login/Register Forms ************* */
+
+
+.nav-login input {
+  font-size: 15px !important;
+}
+
+
+/* label color */
+.input-field label {
+ color: #ffab40;
+}
+
+textarea:focus {
+  border-bottom: 1px solid #ffab40 !important;
+  -webkit-box-shadow: 0 1px 0 0 #ffab40 !important;
+  -moz-box-shadow: 0 1px 0 0 #ffab40 !important;
+  box-shadow: 0 1px 0 0 #ffab40 !important;
+}
+
+label[for=textarea1] {
+  color: #ffab40 !important;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+ color: #ffab40;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #ffab40;
+ box-shadow: 0 1px 0 0 #ffab40;
+}
+/* valid color */
+.input-field input[type=text].valid {
+ border-bottom: 1px solid #ffab40;
+ box-shadow: 0 1px 0 0 #ffab40;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+ border-bottom: 1px solid #ffab40;
+ box-shadow: 0 1px 0 0 #ffab40;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: #ffab40;
+}
+
+/* Password */
+/* label focus color */
+.input-field input[type=password]:focus + label {
+ color: #ffab40;
+}
+/* label underline focus color */
+.input-field input[type=password]:focus {
+ border-bottom: 1px solid #ffab40;
+ box-shadow: 0 1px 0 0 #ffab40;
+}
+/* valid color */
+.input-field input[type=password].valid {
+ border-bottom: 1px solid #ffab40;
+ box-shadow: 0 1px 0 0 #ffab40;
+}
+/* invalid color */
+.input-field input[type=password].invalid {
+ border-bottom: 1px solid #ffab40;
+ box-shadow: 0 1px 0 0 #ffab40;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: #ffab40;
+}

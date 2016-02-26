@@ -15,8 +15,27 @@
 <body>
   <nav class="grey darken-4">
     <div class="nav-wrapper container">
+
+
+  
+
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+
         <div class="row">
+
+        <!-- While Not Logged In -->
+        <li><span class="orange">Login</span></li>
+        <form class="col s6 nav-login">
+          <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="Username" id="first_name" type="text" class="validate">
+            </div>
+            <div class="input-field col s6">
+              <input placeholder="Email" id="last_name" type="text" class="validate">
+            </div>
+          </div>
+        </form>
+
           <li><a class='dropdown-button' href='#' data-beloworigin='true' data-activates='dropdown1'><img src="images/default-user.png" id="user-navbar-img"></a></li>
           <ul id='dropdown1' class='dropdown-content'>
             <li><a href="#!">Profile</a></li>
