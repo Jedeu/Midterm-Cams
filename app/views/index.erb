@@ -13,18 +13,23 @@
   </ul>
 </div>
 
+<% @users.each do |user| %>
 <!-- Teacher Card -->
 <div id="hacker"></div>
 <a class="modal-trigger" href="#modal1">
   <div class="col s12 m4">
     <div class="card">
+    <% if user.is_online == true %>
       <div class="online"><p>ONLINE</p></div>
-      <div class="card-image behind">
+    <% else %>
+      <div class="offline"><p>OFFLINE</p></div>
+    <% end %>
+        <div class="card-image behind">
         <div class="online"></div>
         <img src="http://placehold.it/350x200">
       </div>
       <div class="card-content">
-        <p><strong>John Doe</strong></p>
+        <p><strong><%= user.name %></strong></p>
       </div>
       <div class="card-action">
       <div class="chip">
@@ -36,11 +41,12 @@
           <span><i class="fa fa-star-o"></i></span>            
         </div>
       </div>
-        <a href="#" class="right">100 Hours</a>
+        <a href="#" class="right"><%= user.time_taught %>0 Hours</a>
       </div>
     </div> <!-- /card -->
   </div>
 </a>
+<% end %>
 
 <!-- Teacher Card -->
 <a class="modal-trigger" href="#modal1">

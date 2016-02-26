@@ -19,8 +19,12 @@ end
 
 # Homepage (Root path)
 get '/' do
-  @status = "offline"
-  erb :index
+  if current_user
+    @users = User.all
+    erb :index
+  else
+    redirect '/login'
+  end
 end
 
 # -------------------------------------
@@ -30,7 +34,6 @@ end
 get '/sessions/new' do
   @session = Session.new
   @session.save
-  @status = "online"
   erb :'/sessions/new'
 end
  
