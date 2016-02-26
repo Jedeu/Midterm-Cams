@@ -121,15 +121,12 @@
 
 
 
-
-
-
 <!-- Teacher Profile Modal -->
 <div id="modal1" class="modal modal-fixed-footer">
   <div class="modal-content">
     <div class="right modal-btns">
     <a class="waves-effect waves-light btn dark grey lighten-3">Message</a>&nbsp&nbsp&nbsp
-    <a class="waves-effect waves-light btn green accent-4 btn tooltipped" data-position="top" data-delay="50" data-tooltip="Click to connect now.">Connect Now</a>
+    <a href="/rooms/<%= @room.id %>/join" class="waves-effect waves-light btn green accent-4 btn tooltipped" data-position="top" data-delay="50" data-tooltip="Click to connect now.">Connect Now</a>
     </div>
     <div class="clearfix"></div>
     <!-- <hr> -->

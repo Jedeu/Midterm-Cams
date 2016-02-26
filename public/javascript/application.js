@@ -34,4 +34,25 @@ $(document).ready(function(){
     $('body').removeClass();
     $('body').addClass("theme-7");
   });
+
 });
+
+
+// Timer code. s
+function pad(val) {
+    return val > 9 ? val : "0" + val;
+}
+
+var sec = 0;
+$('#timer_button').one('click', function(){
+  $('#timer_text').replaceWith("<span id=\"minutes\">00</span>:<span id=\"seconds\">00</span>");
+  console.log("clicked")
+  var timer = setInterval(function () {
+    document.getElementById("seconds").innerHTML = pad(++sec % 60);
+    document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
+    console.log(sec);
+}, 1000);
+
+});
+
+
