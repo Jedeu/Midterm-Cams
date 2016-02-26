@@ -33,12 +33,14 @@ get '/sessions/new' do
   @status = "online"
   erb :'/sessions/new'
 end
-<<<<<<< HEAD
+
+# -------------------------------------
+# Reviews
+# -------------------------------------
 
 get '/reviews/index' do
   erb :'/reviews/index'
 end
-=======
  
 # -------------------------------------
 # Login

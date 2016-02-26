@@ -23,12 +23,6 @@ body {
   color: #444;
 }
 
-<<<<<<< HEAD
-/*.resizer>.card {
-  width: 1300px;
-}*/
-
-=======
 /* ************* Navbar ************* */
 
  #logo {
@@ -102,7 +96,7 @@ body {
 #power-on:hover {
   color: #00c853;
 }
->>>>>>> 991dda82984dd2c6af6dc8aa2e089798c696420d
+
 nav ul a:hover {
   background: none;
 }
@@ -280,6 +274,14 @@ nav ul a:hover {
 
 .invoice-padding {
   padding: 20px !important; 
+}
+
+.div-card {
+ transition: box-shadow .25s;
+ padding: 20px;
+ margin: 0.5rem 0 1rem 0;
+ border-radius: 2px;
+ background-color: #fff;
 }
 
 /* ************* Login/Register Forms ************* */
