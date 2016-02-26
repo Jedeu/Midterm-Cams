@@ -6,15 +6,106 @@
   font-size: inherit;
 }
 
+body { 
+  background: url("/images/themes/bg.png") repeat;
+}
+
+
+/* ************* Do not modify ************* */
+
 #hacker {
   height: 5px;
   width: 100%;
 }
 
+/* ************* Helpers ************* */
+
 .dark {
   color: #444;
 }
 
+.white {
+  color: white;
+}
+
+/* ************* Navbar ************* */
+
+ #logo {
+  height: 90%;
+  width: auto;
+  margin-left: -10px;
+  margin-top: 3px;
+ }
+
+ #logo-box {
+  width: 100%;
+  height: 64px;
+  background: url("/images/nav-top.jpg");
+ }
+
+ .navbar-pattern { 
+    background: url("/images/nav-top.jpg");
+ }
+
+/*#user-navbar-img {
+  border-radius: 100%;
+  height: 40px;
+  margin-top: 12px;
+  margin-right: 15px;
+  margin-left: 5px;
+}*/
+
+#full-screen {
+  margin-left: 120px;
+}
+
+.side-nav {
+  position: fixed;
+  width: 160px;
+  left: -105%;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  height: calc(100% + 60px);
+  height: -moz-calc(100%);
+  padding-bottom: 60px;
+  background-color: #fff;
+  z-index: 999;
+  overflow-y: auto;
+  will-change: left;
+}
+
+.dropdown-content {
+  background-color: #fff;
+  margin: 0;
+  display: none;
+  min-width: 200px;
+  max-height: 650px;
+  overflow-y: auto;
+  opacity: 0;
+  position: absolute;
+  z-index: 999;
+  will-change: width, height;
+}
+
+.dropdown-content li {
+  clear: both;
+  color: rgba(0, 0, 0, 0.87);
+  cursor: pointer;
+  min-height: 50px;
+  line-height: 0.5rem;
+  width: 100%;
+  /*text-align: left;*/
+  text-transform: none;
+}
+
+#power-on {
+  color: white;
+}
+
+#power-on:hover {
+  color: #00c853;
+}
 nav ul a:hover {
   background: none;
 }
@@ -22,6 +113,8 @@ nav ul a:hover {
 .dropdown-content li>a, .dropdown-content li>span {
   color: #444;
 }
+
+/* ************* Adult Modal ************* */
 
 .explicit-modal .modal {
   height: 300px !important;
@@ -34,6 +127,46 @@ nav ul a:hover {
 #confirm-join-room-span {
   visibility: hidden !important;
 }
+
+.auto-margin {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+/* ************* Themes ************* */
+
+#theme-btn {
+  margin-top: 10px;
+  margin-right: -60px;
+}
+
+.theme-0 {
+  background-image: none;
+  background-color: white;
+}
+.theme-1 {
+  background: url("/images/themes/1.png") repeat;
+}
+.theme-2 {
+  background: url("/images/themes/2.png") repeat;
+}
+.theme-3 {
+  background: url("/images/themes/3.png") repeat;
+}
+.theme-4 {
+  background: url("/images/themes/4.png") repeat;
+}
+.theme-5 {
+  background: url("/images/themes/5.png") repeat;
+}
+.theme-6 {
+  background: url("/images/themes/6.png") repeat;
+}
+.theme-7 {
+  background: url("/images/themes/7.png") repeat;
+}
+
 /* ************* Teacher Modal ************* */
 
 .modal-teacher-pic {
@@ -58,46 +191,7 @@ nav ul a:hover {
   position: absolute;
 }
 
-/* ************* Layouts File ************* */
- #logo {
-  height: 45px;
-  margin-left: 20px;
-  margin-top: 10px;
- }
-
- #logo-box {
-  width: 100%;
-  height: 64px;
-  /*background-color: #FF9100;*/
- }
-
-#user-navbar-img {
-  border-radius: 100%;
-  height: 40px;
-  margin-top: 12px;
-  margin-right: 15px;
-  margin-left: 5px;
-}
-
-#full-screen {
-  margin-left: 120px;
-}
-
-.side-nav {
-  position: fixed;
-  width: 160px;
-  left: -105%;
-  top: 0;
-  margin: 0;
-  height: 100%;
-  height: calc(100% + 60px);
-  height: -moz-calc(100%);
-  padding-bottom: 60px;
-  background-color: #fff;
-  z-index: 999;
-  overflow-y: auto;
-  will-change: left;
-}
+/* ************* Index Cards ************* */
 
 .card .card-action {
   border-top: 1px solid rgba(160, 160, 160, 0.2);
@@ -122,7 +216,7 @@ nav ul a:hover {
   left: 0;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  background-color: #fb8c00;
+  background-color: #4dc658;
   color: white;
   text-align: center;
 }
@@ -179,3 +273,68 @@ nav ul a:hover {
   position: absolute;
 }
 
+/* ************* Login/Register Forms ************* */
+
+/* label color */
+.input-field label {
+ color: #ffab40;
+}
+
+textarea:focus {
+  border-bottom: 1px solid #ffab40 !important;
+  -webkit-box-shadow: 0 1px 0 0 #ffab40 !important;
+  -moz-box-shadow: 0 1px 0 0 #ffab40 !important;
+  box-shadow: 0 1px 0 0 #ffab40 !important;
+}
+
+label[for=textarea1] {
+  color: #ffab40 !important;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+ color: #ffab40;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #ffab40;
+ box-shadow: 0 1px 0 0 #ffab40;
+}
+/* valid color */
+.input-field input[type=text].valid {
+ border-bottom: 1px solid #ffab40;
+ box-shadow: 0 1px 0 0 #ffab40;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+ border-bottom: 1px solid #ffab40;
+ box-shadow: 0 1px 0 0 #ffab40;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: #ffab40;
+}
+
+/* Password */
+.input-field input[type=password]:focus + label {
+ color: #ffab40;
+}
+/* label underline focus color */
+.input-field input[type=password]:focus {
+ border-bottom: 1px solid #ffab40;
+ box-shadow: 0 1px 0 0 #ffab40;
+}
+/* valid color */
+.input-field input[type=password].valid {
+ border-bottom: 1px solid #ffab40;
+ box-shadow: 0 1px 0 0 #ffab40;
+}
+/* invalid color */
+.input-field input[type=password].invalid {
+ border-bottom: 1px solid #ffab40;
+ box-shadow: 0 1px 0 0 #ffab40;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: #ffab40;
+}

@@ -13,28 +13,34 @@
   <link rel="stylesheet" href="/stylesheets/application.css">
 </head>
 <body>
-  <nav class="grey darken-4">
+
+  <!-- Top Navbar -->
+  <nav class="navbar-pattern">
     <div class="nav-wrapper container">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <div class="row">
-          <li><a class='dropdown-button' href='#' data-beloworigin='true' data-activates='dropdown1'><img src="/images/default-user.png" id="user-navbar-img"></a></li>
+        <% if current_user %>
+          <li><a class='dropdown-button' href='#' data-beloworigin='true' data-activates='dropdown1'><%= current_user.name %></a></li>
           <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="#!">Profile</a></li>
-            <li><a href="#!">Settings</a></li>
+            <li><a href="#!"><span class="left">View Profile </span> <i class="fa fa-user right"></i></a></li>
+            <li><a href="#!"><span class="left">Settings </span><i class="fa fa-cog right"></i></a></li>
             <li class="divider"></li>
-            <li><a href="#!">Logout</a></li>
+            <li><a href="/logout"><span class="left">Power Off </span><i class="fa fa-power-off right"></i></a></li>
           </ul>
+            <li><a href="/sessions/new" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Go Online"><i id="power-on" class="fa fa-power-off fa-2x"></i></a></li>
+        <% end %>
         </div>
       </ul>
     </div>
   </nav>
-        
+  
+  <!-- Side Navbar -->
   <ul class="side-nav fixed">
     <div id="logo-box">
-      <img src="http://placehold.it/160x65">
+    <a href="/"><img id="logo" src="/images/logo1.svg"></a>
+      <!-- <img src="http://placehold.it/160x65"> -->
     </div>
-      <!-- <a href="#" class="brand-logo"><img id="logo" src="images/logo.svg"></a> -->
-      <li class="active"><a href="#!">Home</a></li>
+      <li class="active"><a href="/">Home</a></li>
       <li><a href="#!">Computers</a></li>
       <li><a href="#!">Finance</a></li>
       <li><a href="#!">Legal</a></li>
@@ -50,11 +56,12 @@
 
 
 
+
+
    <div class="container">
     <div class="section">
       <div class="section scrollspy">
         <div class="row">
-          <div id="hacker"></div>
             
           <%= yield %>
 
@@ -72,7 +79,7 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-  <script src="javascript/application.js"></script>
+  <script src="/javascript/application.js"></script>
 </body>
 </html>
 

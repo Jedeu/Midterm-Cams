@@ -1,0 +1,23 @@
+<style type="text/css">
+ .side-nav {
+    visibility: hidden;
+  }
+</style>
+
+<div class="row">
+<h4><strong>Sign up</strong></h4>
+  <form class="col s6" action="/signup" method="post">
+    <div class="row">
+      <div class="input-field col s6">
+        <input placeholder="Username" name="name" type="text" class="validate" value="<%= @user && @user.name %>">
+      </div>
+      <div class="input-field col s6">
+        <input placeholder="Email" name="email" type="text" class="validate" value="<%= @user && @user.email %>">
+      </div>
+      <div class="input-field col s6">
+        <input type="password" placeholder="Password" name="password" type="text" class="validate">
+      </div>
+    </div>
+    <input type="submit" class="waves-effect waves-light orange darken-1 btn">
+  </form>
+</div>

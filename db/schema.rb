@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160226210609) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "email"
+    t.boolean  "is_online",   default: false
   end
 
 end
