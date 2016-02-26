@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :sessions
+  has_many :rooms
   has_many :categories, :through => :category_types
   
   belongs_to :teacher, class_name: 'User', foreign_key: :teacher_id

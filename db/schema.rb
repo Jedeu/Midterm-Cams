@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225224043) do
+ActiveRecord::Schema.define(version: 20160226013520) do
 
   create_table "categories", force: :cascade do |t|
     t.string "type"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160225224043) do
     t.integer "user_id"
   end
 
-  create_table "sessions", force: :cascade do |t|
+  create_table "rooms", force: :cascade do |t|
     t.string   "review_title"
     t.text     "review_content"
     t.integer  "review_rating"

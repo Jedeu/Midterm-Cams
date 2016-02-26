@@ -1,4 +1,4 @@
-class Session < ActiveRecord::Base
+class Room < ActiveRecord::Base
   belongs_to :user
   before_create :create_url_key
 

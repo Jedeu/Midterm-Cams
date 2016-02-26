@@ -3,9 +3,10 @@ get '/' do
   erb :index
 end
 
-get '/sessions/new' do
-  
-  @session=Session.new
-  @session.save
-  erb :'/sessions/new'
+get '/rooms/new' do
+
+  @room=Room.new
+  @room.save
+  erb :'/rooms/new'
 end
+ 
