@@ -10,6 +10,7 @@ body {
   background: url("/images/themes/bg.png") repeat;
 }
 
+
 /* ************* Do not modify ************* */
 
 #hacker {
@@ -21,6 +22,10 @@ body {
 
 .dark {
   color: #444;
+}
+
+.white {
+  color: white;
 }
 
 /* ************* Navbar ************* */
@@ -35,6 +40,11 @@ body {
  #logo-box {
   width: 100%;
   height: 64px;
+  background: url("/images/nav-top.jpg");
+ }
+
+ .navbar-pattern { 
+    background: url("/images/nav-top.jpg");
  }
 
 /*#user-navbar-img {
@@ -206,7 +216,7 @@ nav ul a:hover {
   left: 0;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  background-color: #fb8c00;
+  background-color: #4dc658;
   color: white;
   text-align: center;
 }
