@@ -1,4 +1,4 @@
-$(document).ready(function() {
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+$(document).ready(function(){
+  $('.modal-trigger').leanModal();
+  $('.tooltipped').tooltip({delay: 50});
 });
