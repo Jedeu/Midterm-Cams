@@ -9,4 +9,3 @@ get '/sessions/new' do
   @session.save
   erb :'/sessions/new'
 end
- 
