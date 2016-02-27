@@ -18,122 +18,46 @@
 
 
 <% @users.each do |user| %>
-  <% if !user.host_rooms.empty? %>
-    <!-- Teacher Card -->
-    <div id="hacker"></div>
-    <a class="modal-trigger" href="#modal1">
-      <div class="col s12 m4">
-        <div class="card">
-        <% if user.is_online %>
-          <div id="user-status-tag" class="online"><p>ONLINE</p></div>
-        <% else %>
-          <div id="user-status-tag" class="offline"><p>OFFLINE</p></div>
-        <% end %>
-            <div class="card-image behind">
-            <!-- <div class="online"></div> -->
-            <img src="http://placehold.it/350x200">
-          </div>
-          <div class="card-content">
-            <p><strong><%= user.name %></strong></p>
-          </div>
-          <div class="card-action">
-          <div class="chip">
-            <div class="rating card-rating">
-              <span><i class="fa fa-star"></i></span>
-              <span><i class="fa fa-star"></i></span>
-              <span><i class="fa fa-star"></i></span>
-              <span><i class="fa fa-star"></i></span>
-              <span><i class="fa fa-star"></i></span>           
-            </div>
-          </div>
-            <a href="#" class="right"><%= user.time_taught %>0 Hours</a>
-          </div>
-        </div> <!-- /card -->
-      </div>
-    </a>
-
-<!-- Teacher Card -->
-<div id="hacker"></div>
-<a class="modal-trigger" href="#modal1">
-  <div class="col s12 m4">
-    <div class="card">
-    <% if user.is_online %>
-      <div id="user-status-tag" class="online"><p>ONLINE</p></div>
-    <% else %>
-      <div id="user-status-tag" class="offline"><p>OFFLINE</p></div>
-    <% end %>
-        <div class="card-image behind">
-        <img src="http://placehold.it/350x200">
-        <span class="card-title card-rating">
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-        </span>
-      </div>
-      <div class="card-content">
-        <p id="card-username"><strong><%= user.name %></strong></p>
-        <% if user.has_taught %>
-          <span class="chip right in-chat-chip "><p class="small2">BUSY</p></span>
-        <% end %>
-        <p class="small2"><%= user.time_taught %> hours chatted</p>
-      </div>
-      <!-- <div class="card-action dark-pattern">
-      <div class="chip">
-        <div class="rating card-rating">
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>           
+  <!-- Teacher Card -->
+  <div id="hacker"></div>
+  <a class="modal-trigger" href="#modal1">
+    <div class="col s12 m4">
+      <div class="card">
+      <% if user.is_online %>
+        <div id="user-status-tag" class="online"><p>ONLINE</p></div>
+      <% else %>
+        <div id="user-status-tag" class="offline"><p>OFFLINE</p></div>
+      <% end %>
+          <div class="card-image behind">
+          <img src="http://placehold.it/350x200">
+          <span class="card-title card-rating">
+            <span><i class="fa fa-star"></i></span>
+            <span><i class="fa fa-star"></i></span>
+            <span><i class="fa fa-star"></i></span>
+            <span><i class="fa fa-star"></i></span>
+          </span>
         </div>
-      </div>
-      </div> -->
-    </div> <!-- /card -->
-  </div>
-</a>
-
-
-
-
-
-
-
-
-    <!-- Teacher Profile Modal -->
-    <div id="modal1" class="modal modal-fixed-footer">
-      
-      <div class="modal-header white">
-        <div class="right modal-btns">
-        <a class="waves-effect waves-light btn dark grey lighten-3">Message</a>&nbsp&nbsp&nbsp
-        <a href = "/rooms/<%= user.host_rooms.last.id%>/show"class="waves-effect waves-light btn green accent-4 btn tooltipped" data-position="top" data-delay="50" data-tooltip="Click to connect now.">Connect Now</a>
+        <div class="card-content">
+          <p id="card-username"><strong><%= user.name %></strong></p>
+          <% if user.has_taught %>
+            <span class="chip right in-chat-chip "><p class="small2">BUSY</p></span>
+          <% end %>
+          <p class="small2"><%= user.time_taught %> hours chatted</p>
         </div>
-        <div class="clearfix"></div>
-        <div class="row">
-          <div class="col m3">
-            <img src="images/default-user.png" class="modal-teacher-pic">
+        <!-- <div class="card-action dark-pattern">
+        <div class="chip">
+          <div class="rating card-rating">
+            <span><i class="fa fa-star"></i></span>
+            <span><i class="fa fa-star"></i></span>
+            <span><i class="fa fa-star"></i></span>
+            <span><i class="fa fa-star"></i></span>
+            <span><i class="fa fa-star"></i></span>           
           </div>
-          <div class="col m9"><br><br>
-            <h4><strong><%= user.name %></strong></h4>
-            <p>Member Since: <%= user.created_at.strftime("%b %d, %Y") %></p>
-          <div class="teacher-rating">
-            <span><i class="fa fa-star fa-2x"></i></span>
-            <span><i class="fa fa-star fa-2x"></i></span>
-            <span><i class="fa fa-star fa-2x"></i></span>
-            <span><i class="fa fa-star fa-2x"></i></span>
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+        </div> -->
+      </div> <!-- /card -->
+    </div>
+  </a>
 
 
 
@@ -164,23 +88,7 @@
       </div>
     </div>
   </div> 
-    <!-- <div class="modal-content"> -->
-    <!-- Categories -->
-  <div class="modal-body">
-    <div class="row">
-      <div class="col m3">
-        <div class="card">
-          <div class="card-content teacher-categories">
-            <div class="chip">Category</div>
-            <div class="chip">Category</div>
-            <div class="chip">Category</div>
-            <div class="chip">Category</div>
-            <div class="chip">Category</div>
-            <div class="chip">Category</div>
-            <div class="chip">Category</div>
-          </div>
-        </div>
-      </div> 
+
         <!-- <div class="modal-content"> -->
         <!-- Categories -->
       <div class="modal-body">
@@ -229,39 +137,8 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga error quidem, doloremque nisi quis nobis eveniet illum praesentium asperiores! Labore vel aspernatur harum voluptates. Iusto sit assumenda officia, natus aspernatur! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </div>
     </div>
-    <!-- Reviews -->
-    <h5><strong>Reviews</strong></h5>
-    <hr>
-    <div class="row">
-      <div class="col m12">
-       <div class="card">
-          <div class="card-content">
-              <h6 class="left"><strong>Anonymous</strong> | Feb 20, 2016</h6>
-              <div class="chip right">
-                <div class="rating card-rating">
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>          
-                </div>  
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> <!-- /modal-body -->
-      <!-- </div> -->
-      <!-- <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
-      </div> -->
-    </div>
-  <% end %>
-<% end %>   
+  <% end %>  
       
-
-
-
-
-
 
 
 
