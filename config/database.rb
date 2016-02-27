@@ -1,3 +1,9 @@
+require 'pg'
+# conn = PG::Connection.open(:dbname => 'cam_me')
+# conn1 = PG::Connection.open(:dbname =>)
+connection = PG.connect('ec2-54-204-3-200.compute-1.amazonaws.com', 5432, nil, nil, 'dd4g8pa0t2r0e0', 'rvaouvsgssbyzl', 'FUrb1aGjjMNi0fK94H_1MnVsb4')
+
+
 configure do
   # Log queries to STDOUT in development
   if Sinatra::Application.development?
@@ -5,15 +11,15 @@ configure do
   end
 
   set :database, {
-    # adapter: "postgresql",
-    # database: "dd4g8pa0t2r0e0",
-    # username: 'rvaouvsgssbyzl',
-    # password: 'FUrb1aGjjMNi0fK94H_1MnVsb4',
-    # host: 'ec2-54-204-3-200.compute-1.amazonaws.com',
-    # port: 5432,
-    # encoding: 'unicode'
-    adapter: "sqlite3",
-    database: "db/db.sqlite3"
+    adapter: "postgresql",
+    database: "dd4g8pa0t2r0e0",
+    username: 'rvaouvsgssbyzl',
+    password: 'FUrb1aGjjMNi0fK94H_1MnVsb4',
+    host: 'ec2-54-204-3-200.compute-1.amazonaws.com',
+    port: 5432,
+    encoding: 'unicode'
+    # adapter: "sqlite3",
+    # database: "db/db.sqlite3"
   }
 
   # Load all models from app/models, using autoload instead of require
