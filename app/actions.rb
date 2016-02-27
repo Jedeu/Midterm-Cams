@@ -19,8 +19,12 @@ end
 
 # Homepage (Root path)
 get '/' do
-  @status = "offline"
-  erb :index
+  if current_user
+    @users = User.all
+    erb :index
+  else
+    redirect '/login'
+  end
 end
 
 
@@ -48,7 +52,6 @@ get '/rooms/:id/join' do
 end
 
 
- 
 # -------------------------------------
 # Login
 # -------------------------------------
@@ -108,4 +111,16 @@ post '/signup' do
   else
     erb :'user_sessions/signup'
   end
+end
+
+post '/go_online' do
+  content_type :json 
+  if current_user.is_online
+    current_user.update(is_online: false)
+    return {online: true}.to_json
+  else
+    current_user.update(is_online: true)
+    return {online: false}.to_json
+  end
+
 end

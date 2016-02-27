@@ -52,7 +52,25 @@ $('#timer_button').one('click', function(){
     document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
     console.log(sec);
 }, 1000);
-
 });
 
+$("#power-on").on("click", function(e){
+  e.stopPropagation();
+  // console.log("The user id is ", $(this).data("current-user-id"));
+  var userId = $(this).data("current-user-id")
+  $.post("/go_online", {user_id: userId}, function(data){ 
+    if (data.online) {
+      $(this).addClass("user-offline");
+      $("#user-status-tag").removeClass("online");
+      $("#user-status-tag").addClass("offline");
+      $("#user-status-tag").html("OFFLINE").addClass("smallz");
+
+    } else {
+      $(this).addClass("user-online");
+      $("#user-status-tag").removeClass("offline");
+      $("#user-status-tag").addClass("online");
+      $("#user-status-tag").html("ONLINE").addClass("smallz");
+    }
+  });
+});
 
