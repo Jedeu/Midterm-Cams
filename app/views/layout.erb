@@ -28,6 +28,15 @@
             <li class="divider"></li>
             <li><a href="/logout"><span class="left">Logout </span><i class="fa fa-power-off right"></i></a></li>
           </ul>
+
+          <% if @in_room %>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+              <li><a id="timer_button" class="waves-effect waves-light btn-large valign"><span id="timer_text">Start One-on-One</span></a></li>
+              <li><a href="/" id="button" class="waves-effect waves-light btn-large valign">Quit Session</a></li>
+            </ul>
+          <%end%>
+
             <li><a href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Go Online"><i id="power-on" data-current-user-id="<%= current_user.id %>" class="fa fa-power-off fa-2x"></i></a></li>
         <% end %>
 
@@ -53,11 +62,6 @@
       <li><a class="modal-trigger" href="#explicit">Adult</a></li>
   </ul>
 <body>
-
-
-
-
-
 
 
    <div class="container">
