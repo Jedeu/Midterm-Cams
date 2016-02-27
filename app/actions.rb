@@ -68,6 +68,7 @@ end
 # -------------------------------------
 
 get '/logout' do
+  current_user.update(is_online: false)
   session.clear
   redirect '/login'
 end
