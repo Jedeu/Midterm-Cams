@@ -10,6 +10,7 @@ require 'sinatra/contrib/all' # Requires cookies, among other things
 
 require 'pry'
 require 'securerandom'
+require 'pg'
 
 # encoding = 'utf8'
 #         ActiveRecord::Base.establish_connection config.merge('database' => 'postgres', 'schema_search_path' => 'public')

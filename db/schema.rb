@@ -39,10 +39,6 @@ ActiveRecord::Schema.define(version: 20160227044637) do
     t.string   "url_key"
   end
 
-  create_table "test", id: false, force: :cascade do |t|
-    t.string "email", limit: 20
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "password"
