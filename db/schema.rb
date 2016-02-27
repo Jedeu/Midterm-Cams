@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160226210609) do
     t.integer "user_id"
   end
 
-  create_table "sessions", force: :cascade do |t|
+  create_table "rooms", force: :cascade do |t|
     t.string   "review_title"
     t.text     "review_content"
     t.integer  "review_rating"
