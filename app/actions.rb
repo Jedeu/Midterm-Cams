@@ -97,3 +97,15 @@ post '/signup' do
     erb :'user_sessions/signup'
   end
 end
+
+post '/go_online' do
+  content_type :json 
+  if current_user.is_online
+    current_user.update(is_online: false)
+    return {online: true}.to_json
+  else
+    current_user.update(is_online: true)
+    return {online: false}.to_json
+  end
+
+end

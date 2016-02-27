@@ -10,7 +10,6 @@ body {
   background: url("/images/themes/bg.png") repeat;
 }
 
-
 /* ************* Do not modify ************* */
 
 #hacker {
@@ -43,7 +42,7 @@ body {
   background: url("/images/nav-top.jpg");
  }
 
- .navbar-pattern { 
+ .dark-pattern { 
     background: url("/images/nav-top.jpg");
  }
 
@@ -101,6 +100,10 @@ body {
 
 #power-on {
   color: white;
+}
+
+#user-online {
+  color: #00c853 !important;
 }
 
 #power-on:hover {
@@ -169,6 +172,18 @@ nav ul a:hover {
 
 /* ************* Teacher Modal ************* */
 
+.modal .modal-header {
+  border-radius: 0 0 2px 2px;
+  background: url("/images/nav-top.jpg");
+  padding: 30px 20px 10px 20px;
+  height: auto;
+  width: auto;
+}
+
+.modal .modal-body {
+  padding: 30px 20px 10px 20px;
+}
+
 .modal-teacher-pic {
   border-radius: 100%;
   height: 150px;
@@ -196,6 +211,10 @@ nav ul a:hover {
 .card .card-action {
   border-top: 1px solid rgba(160, 160, 160, 0.2);
   padding: 10px;
+}
+
+.card-rating {
+  color: #ffab40;
 }
 
 .small {
@@ -237,6 +256,13 @@ nav ul a:hover {
   background-color: #616161;
   color: white;
   text-align: center;
+}
+
+.smallz {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 10px;
 }
 
 .online p {

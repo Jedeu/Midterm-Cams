@@ -15,20 +15,22 @@
 <body>
 
   <!-- Top Navbar -->
-  <nav class="navbar-pattern">
+  <nav class="dark-pattern">
     <div class="nav-wrapper container">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <div class="row">
+
         <% if current_user %>
           <li><a class='dropdown-button' href='#' data-beloworigin='true' data-activates='dropdown1'><%= current_user.name %></a></li>
           <ul id='dropdown1' class='dropdown-content'>
             <li><a href="#!"><span class="left">View Profile </span> <i class="fa fa-user right"></i></a></li>
             <li><a href="#!"><span class="left">Settings </span><i class="fa fa-cog right"></i></a></li>
             <li class="divider"></li>
-            <li><a href="/logout"><span class="left">Power Off </span><i class="fa fa-power-off right"></i></a></li>
+            <li><a href="/logout"><span class="left">Logout </span><i class="fa fa-power-off right"></i></a></li>
           </ul>
-            <li><a href="/sessions/new" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Go Online"><i id="power-on" class="fa fa-power-off fa-2x"></i></a></li>
+            <li><a href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Go Online"><i id="power-on" data-current-user-id="<%= current_user.id %>" class="fa fa-power-off fa-2x"></i></a></li>
         <% end %>
+
         </div>
       </ul>
     </div>
