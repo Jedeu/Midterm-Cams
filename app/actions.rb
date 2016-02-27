@@ -27,16 +27,31 @@ get '/' do
   end
 end
 
+
 # -------------------------------------
 # Rooms
 # -------------------------------------
-
-get '/sessions/new' do
-  @session = Session.new
-  @session.save
-  erb :'/sessions/new'
+get '/rooms/create' do
+  @room=Room.new
+  @room.teacher=current_user
+  @room.save
+  redirect to "/rooms/#{@room.id}/show"
 end
- 
+
+get '/rooms/:id/show' do
+  @room = Room.find(params[:id])
+  @in_room=true
+  @status = "online"
+  erb :'/rooms/create'
+end
+
+get '/rooms/:id/join' do
+    @room = Room.find(params[:id])
+    # set the current_user to @room.user
+    redirect to /rooms/#{@room.id}/show
+end
+
+
 # -------------------------------------
 # Login
 # -------------------------------------
