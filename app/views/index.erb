@@ -13,6 +13,10 @@
   </ul>
 </div>
 
+
+
+
+
 <% @users.each do |user| %>
 <!-- Teacher Card -->
 <div id="hacker"></div>
@@ -25,13 +29,22 @@
       <div id="user-status-tag" class="offline"><p>OFFLINE</p></div>
     <% end %>
         <div class="card-image behind">
-        <!-- <div class="online"></div> -->
         <img src="http://placehold.it/350x200">
+        <span class="card-title card-rating">
+          <span><i class="fa fa-star"></i></span>
+          <span><i class="fa fa-star"></i></span>
+          <span><i class="fa fa-star"></i></span>
+          <span><i class="fa fa-star"></i></span>
+        </span>
       </div>
       <div class="card-content">
-        <p><strong><%= user.name %></strong></p>
+        <p id="card-username"><strong><%= user.name %></strong></p>
+        <% if user.has_taught %>
+          <span class="chip right in-chat-chip "><p class="small2">BUSY</p></span>
+        <% end %>
+        <p class="small2"><%= user.time_taught %> hours chatted</p>
       </div>
-      <div class="card-action">
+      <!-- <div class="card-action dark-pattern">
       <div class="chip">
         <div class="rating card-rating">
           <span><i class="fa fa-star"></i></span>
@@ -41,8 +54,7 @@
           <span><i class="fa fa-star"></i></span>           
         </div>
       </div>
-        <a href="#" class="right"><%= user.time_taught %>0 Hours</a>
-      </div>
+      </div> -->
     </div> <!-- /card -->
   </div>
 </a>
@@ -52,20 +64,36 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Teacher Profile Modal -->
 <div id="modal1" class="modal modal-fixed-footer">
-  
   <div class="modal-header white">
     <div class="right modal-btns">
-    <a class="waves-effect waves-light btn dark grey lighten-3">Message</a>&nbsp&nbsp&nbsp
-    <a class="waves-effect waves-light btn green accent-4 btn tooltipped" data-position="top" data-delay="50" data-tooltip="Click to connect now.">Connect Now</a>
+    <a class="waves-effect waves-light btn dark grey rounded-btn lighten-3">Message</a>&nbsp&nbsp&nbsp
+    <a class="waves-effect waves-light btn green accent-4 rounded-btn btn tooltipped" data-position="top" data-delay="50" data-tooltip="Connect with <%= user.name %>">Connect Now</a>
     </div>
     <div class="clearfix"></div>
     <div class="row">
       <div class="col m3">
         <img src="images/default-user.png" class="modal-teacher-pic">
       </div>
-      <div class="col m9"><br><br>
+      <div class="col m9"><br>
         <h4><strong><%= user.name %></strong></h4>
         <p>Member Since: <%= user.created_at.strftime("%b %d, %Y") %></p>
       <div class="teacher-rating">
@@ -112,12 +140,11 @@
           <div class="card-content">
               <h6 class="left"><strong>Anonymous</strong> | Feb 20, 2016</h6>
               <div class="chip right">
-                <div class="rating">
-                  <span><i class="fa fa-star-o"></i></span>
-                  <span><i class="fa fa-star-o"></i></span>
-                  <span><i class="fa fa-star-o"></i></span>
-                  <span><i class="fa fa-star-o"></i></span>
-                  <span><i class="fa fa-star-o"></i></span>            
+                <div class="rating card-rating">
+                  <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star"></i></span>          
                 </div>
               </div>
               <div class="clearfix"></div>

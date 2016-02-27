@@ -31,16 +31,29 @@ end
 # -------------------------------------
 # Rooms
 # -------------------------------------
+# get '/rooms/create' do
 get '/rooms/create' do
-  @room=Room.new
-  @room.teacher=current_user
+  @room = Room.new
+  @room.host = current_user
   @room.save
   redirect to "/rooms/#{@room.id}/show"
 end
 
+post '/host_room' do
+  content_type :json
+  current_user.update(has_taught: true)
+  return {host: true}.to_json
+end
+
+get '/host_room' do
+  content_type :json
+  current_user.update(has_taught: false)
+  redirect '/'
+end
+
 get '/rooms/:id/show' do
   @room = Room.find(params[:id])
-  @in_room=true
+  @in_room = true
   @status = "online"
   erb :'/rooms/create'
 end
@@ -50,7 +63,6 @@ get '/rooms/:id/join' do
     # set the current_user to @room.user
     redirect to /rooms/#{@room.id}/show
 end
-
 
 # -------------------------------------
 # Login
@@ -84,6 +96,7 @@ end
 
 get '/logout' do
   current_user.update(is_online: false)
+  current_user.update(has_taught: false)
   session.clear
   redirect '/login'
 end
@@ -123,5 +136,4 @@ post '/go_online' do
     current_user.update(is_online: true)
     return {online: false}.to_json
   end
-
 end
