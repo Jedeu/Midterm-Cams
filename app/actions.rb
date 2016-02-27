@@ -27,11 +27,26 @@ get '/' do
   end
 end
 
+# -------------------------------------
+# Users / Edit
+# -------------------------------------
+
+get '/user/settings' do
+  erb :'user/edit'
+end
+
+# -------------------------------------
+# Users / Profile
+# -------------------------------------
+
+get '/user/profile' do
+  erb :'user/profile'
+end 
 
 # -------------------------------------
 # Rooms
 # -------------------------------------
-# get '/rooms/create' do
+
 get '/rooms/create' do
   @room = Room.new
   @room.host = current_user
@@ -54,7 +69,7 @@ end
 get '/rooms/:id/show' do
   @room = Room.find(params[:id])
   @in_room = true
-  @status = "online"
+  # @status = "online"
   erb :'/rooms/create'
 end
 
@@ -72,7 +87,7 @@ get '/login' do
   if current_user
     redirect '/'
   else
-    erb :'user_sessions/login'
+    erb :'sessions/login'
   end
 end
 
@@ -109,7 +124,7 @@ get '/signup' do
   if current_user
     redirect '/'
   else
-    erb :'user_sessions/signup'
+    erb :'sessions/signup'
   end
 end
 
@@ -123,7 +138,7 @@ post '/signup' do
     session[:user_id] = @user.id
     redirect '/'
   else
-    erb :'user_sessions/signup'
+    erb :'sessions/signup'
   end
 end
 
