@@ -8,7 +8,10 @@ class Room < ActiveRecord::Base
   # validates :review_content, presence: true
 
 
+
+
   def create_url_key
     self.url_key = SecureRandom.urlsafe_base64
   end
+
 end
