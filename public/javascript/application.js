@@ -35,10 +35,28 @@ $(document).ready(function(){
     $('body').addClass("theme-7");
   });
 
-});
+
+//adds categories to User cards from db
 
 
-// Timer code. s
+
+//Filtering by categories
+var filters = $('.filter').click(function() {
+  if (this.id == 'all') {
+    console.log("clicked all");
+    $("#parent > div").fadeIn(450);
+  } else {
+    console.log("clicked "+ this.id)
+    var el = $('.' + this.id).fadeIn(450);
+    $("#parent > div").not(el).hide();
+  }
+  filters.removeClass('active');
+  $(this).addClass('active');
+})
+
+
+
+// Timer code. 
 function pad(val) {
     return val > 9 ? val : "0" + val;
 }
@@ -46,7 +64,7 @@ function pad(val) {
 var sec = 0;
 $('#timer_button').one('click', function(){
   $('#timer_text').replaceWith("<span id=\"minutes\">00</span>:<span id=\"seconds\">00</span>");
-  console.log("clicked")
+  console.log("clicked");
   var timer = setInterval(function () {
     document.getElementById("seconds").innerHTML = pad(++sec % 60);
     document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
@@ -74,3 +92,4 @@ $("#power-on").on("click", function(e){
   });
 });
 
+});

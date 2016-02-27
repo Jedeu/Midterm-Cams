@@ -35,7 +35,7 @@ get '/rooms/create' do
   @room=Room.new
   @room.teacher=current_user
   @room.save
-  redirect to "/rooms/#{@room.id}/show"
+  redirect "/rooms/#{@room.id}/show"
 end
 
 get '/rooms/:id/show' do
@@ -48,7 +48,7 @@ end
 get '/rooms/:id/join' do
     @room = Room.find(params[:id])
     # set the current_user to @room.user
-    redirect to /rooms/#{@room.id}/show
+    redirect "/rooms/#{@room.id}/show"
 end
 
 
@@ -122,5 +122,16 @@ post '/go_online' do
     current_user.update(is_online: true)
     return {online: false}.to_json
   end
+
+end
+
+# -------------------------------------
+# User categories
+# -------------------------------------
+
+post '/categories' do
+  content_type :json 
+  return .to_json
+
 
 end

@@ -18,32 +18,34 @@
 <div id="hacker"></div>
 <a class="modal-trigger" href="#modal1">
   <div class="col s12 m4">
-    <div class="card">
-    <% if user.is_online %>
-      <div id="user-status-tag" class="online"><p>ONLINE</p></div>
-    <% else %>
-      <div id="user-status-tag" class="offline"><p>OFFLINE</p></div>
-    <% end %>
-        <div class="card-image behind">
-        <!-- <div class="online"></div> -->
-        <img src="http://placehold.it/350x200">
-      </div>
-      <div class="card-content">
-        <p><strong><%= user.name %></strong></p>
-      </div>
-      <div class="card-action">
-      <div class="chip">
-        <div class="rating card-rating">
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>           
+    <div id="parent">
+      <div class="card">
+      <% if user.is_online %>
+        <div id="user-status-tag" class="online"><p>ONLINE</p></div>
+      <% else %>
+        <div id="user-status-tag" class="offline"><p>OFFLINE</p></div>
+      <% end %>
+          <div class="card-image behind">
+          <!-- <div class="online"></div> -->
+          <img src="http://placehold.it/350x200">
         </div>
-      </div>
-        <a href="#" class="right"><%= user.time_taught %>0 Hours</a>
-      </div>
-    </div> <!-- /card -->
+        <div class="card-content">
+          <p><strong><%= user.name %></strong></p>
+        </div>
+        <div class="card-action">
+        <div class="chip">
+          <div class="rating card-rating">
+            <span><i class="fa fa-star"></i></span>
+            <span><i class="fa fa-star"></i></span>
+            <span><i class="fa fa-star"></i></span>
+            <span><i class="fa fa-star"></i></span>
+            <span><i class="fa fa-star"></i></span>           
+          </div>
+        </div>
+          <a href="#" class="right"><%= user.time_taught %>0 Hours</a>
+        </div>
+      </div> <!-- /card -->
+    </div>
   </div>
 </a>
 
@@ -135,23 +137,6 @@
 </div>
 <% end %>   
       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
