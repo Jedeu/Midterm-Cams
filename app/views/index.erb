@@ -18,7 +18,7 @@
 
 <% @users.each do |user| %>
   <!-- Teacher Card -->
-  <a class="modal-trigger" href="#modal1">
+  <a class="modal-trigger" href="#modal<%= user.id %>">
     <div class="col s12 m4">
       <div class="card">
       <% if user.is_online %>
@@ -42,17 +42,6 @@
           <% end %>
           <p class="small2"><%= user.time_taught %> hours chatted</p>
         </div>
-        <!-- <div class="card-action dark-pattern">
-        <div class="chip">
-          <div class="rating card-rating">
-            <span><i class="fa fa-star"></i></span>
-            <span><i class="fa fa-star"></i></span>
-            <span><i class="fa fa-star"></i></span>
-            <span><i class="fa fa-star"></i></span>
-            <span><i class="fa fa-star"></i></span>           
-          </div>
-        </div>
-        </div> -->
       </div> <!-- /card -->
     </div>
   </a>
@@ -63,7 +52,7 @@
 
 
 <!-- Teacher Profile Modal -->
-<div id="modal1" class="modal modal-fixed-footer">
+<div id="modal<%= user.id %>" class="modal modal-fixed-footer">
   <div class="modal-header white">
     <div class="right modal-btns">
     <a class="waves-effect waves-light btn dark grey rounded-btn lighten-3">Message</a>&nbsp&nbsp&nbsp
@@ -94,13 +83,9 @@
           <div class="col m3">
             <div class="card">
               <div class="card-content teacher-categories">
-                <div class="chip">Category</div>
-                <div class="chip">Category</div>
-                <div class="chip">Category</div>
-                <div class="chip">Category</div>
-                <div class="chip">Category</div>
-                <div class="chip">Category</div>
-                <div class="chip">Category</div>
+              <% user.categories.each do |category| %>
+                <div class="chip"><%= category.tag %></div>
+              <% end %>
               </div>
             </div>
           </div>
