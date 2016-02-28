@@ -62,7 +62,11 @@ end
 post '/host_room' do
   content_type :json
   current_user.update(has_taught: true)
-  return {host: true}.to_json
+  @room = Room.find(params[:id])
+  # if current_user.id = @room.teacher_id
+  #   current_user.update(time_taught: time_taught += params[:js_timer])
+  # end
+  {host: true}.to_json
 end
 
 get '/host_room' do
@@ -81,6 +85,7 @@ end
 
 get '/rooms/:id/join' do
     @room = Room.find(params[:id])
+    @room.update(user_id: current_user.id)
     # set the current_user to @room.user
     redirect "/rooms/#{@room.id}/show"
 end
@@ -159,21 +164,5 @@ post '/go_online' do
     return {online: false}.to_json
   end
 end
-
-
-
-# -------------------------------------
-# Timer
-# -------------------------------------
-
-post '/update_timer' do
-  content_type :json 
-  
-end
-
-
-
-
-
 
 

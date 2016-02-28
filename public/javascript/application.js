@@ -56,6 +56,7 @@ function pad(val) {
     return val > 9 ? val : "0" + val;
 }
 
+
 var sec = 0;
 $('#timer_button').one('click', function(){
   $('#timer_text').replaceWith("<span id=\"minutes\">00</span>:<span id=\"seconds\">00</span>");
@@ -100,6 +101,11 @@ $("#power-on").on("click", function(x){
       $("#create-room").fadeIn("slow");
     }
   });
+});
+
+$("#leave-room").on("click", function(x) {
+  console.log("Teacher id is", $(this).data("teacher-id"));
+  console.log("User id is", $(this).data("user-id"));
 });
 
 

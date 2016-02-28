@@ -30,7 +30,8 @@
 
            <% if @in_room %>
             <li><a id="timer_button" class="waves-effect waves-light rounded-btn green accent-4 btn tooltipped" data-position="left" data-delay="50" data-tooltip="Timer will begin"><span id="timer_text">Start Session</span></a></li>
-            <li><a href="/host_room" id="leave-room" href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="End Session"><i id="end-session" class="fa fa-power-off fa-2x"></i></a></li>
+            <li><a href="/host_room" id="leave-room" href="#" class="tooltipped" data-position="right" data-delay="50" data-teacher-id="<%= @room.teacher_id %>" data-user-id="<%= @room.user_id %>" data-tooltip="End Session"><i id="end-session" class="fa fa-power-off fa-2x"></i></a></li>
+
           <% else %>
             <% if current_user.is_online %>
               <% @create_room = "visible" %>
@@ -38,7 +39,7 @@
               <% @create_room = "hidden" %>
             <% end %>
 
-            <span id="butt2" class="<%= @create_room %>">
+            <span id="butt32" class="<%= @create_room %>">
             <li id="create-room" data-host="<%= current_user.has_taught %>"><a href="/rooms/create" target="_blank" class="waves-effect waves-light rounded-btn green accent-4 btn">Create Room</a></li>
             </span>
             <li><a class='dropdown-button hide-on-med-and-down' href='#' data-beloworigin='true' data-activates='dropdown1'><%= current_user.name %> <i class="fa fa-chevron-down"></i></a></li>
@@ -60,6 +61,8 @@
             <% else %>
               <% @power_btn = "off" %>
             <% end %>
+
+            <li><a id="status-tip" href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="<%= @user_status %>"><i id="power-on" data-current-user-id="<%= current_user.id %>" class="fa fa-power-off fa-2x <%= @power_btn %>"></i></a></li>
 
             <li><a id="status-tip" href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="<%= @user_status %>"><i id="power-on" data-current-user-id="<%= current_user.id %>" class="fa fa-power-off fa-2x <%= @power_btn %>"></i></a></li>
             <!-- end  -->

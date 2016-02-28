@@ -74,7 +74,7 @@
     <% @room = Room.where(teacher_id: user.id).last %>
     <% if @room %>
       <% @room_number = @room.id %>
-      <a href="rooms/<%= @room_number %>/show" class="waves-effect waves-light btn green accent-4 rounded-btn btn tooltipped" data-position="top" data-delay="50" data-tooltip="Connect with <%= user.name %>">Connect Now</a>
+      <a href="rooms/<%= @room_number %>/join" class="waves-effect waves-light btn green accent-4 rounded-btn btn tooltipped" data-position="top" data-delay="50" data-tooltip="Connect with <%= user.name %>">Connect Now</a>
     <% end %>
     
     </div>
