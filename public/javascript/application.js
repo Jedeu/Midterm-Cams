@@ -43,11 +43,11 @@ $(document).ready(function(){
 var filters = $('.filter').click(function() {
   if (this.id == 'all') {
     console.log("clicked all");
-    $("#parent > div").fadeIn(450);
+    $("#parent > div:first-of-type").fadeIn(450);
   } else {
     console.log("clicked "+ this.id)
     var el = $('.' + this.id).fadeIn(450);
-    $("#parent > div").not(el).hide();
+    $("#parent > div:first-of-type").not(el).hide();
   }
   filters.removeClass('active');
   $(this).addClass('active');

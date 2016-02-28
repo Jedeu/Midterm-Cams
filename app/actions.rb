@@ -157,9 +157,9 @@ end
 # User categories
 # -------------------------------------
 
-post '/categories' do
-  content_type :json 
-  return .to_json
+# post '/categories' do
+#   content_type :json 
+#   return .to_json
 
 
-end
+# end
