@@ -10,6 +10,12 @@ require 'sinatra/contrib/all' # Requires cookies, among other things
 
 require 'pry'
 require 'securerandom'
+require 'pg'
+
+# encoding = 'utf8'
+#         ActiveRecord::Base.establish_connection config.merge('database' => 'postgres', 'schema_search_path' => 'public')
+#         ActiveRecord::Base.connection.create_database config['database'], config.merge('encoding' => encoding)
+#         ActiveRecord::Base.establish_connection config
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
