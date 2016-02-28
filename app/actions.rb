@@ -158,21 +158,7 @@ post '/go_online' do
   end
 end
 
-# -------------------------------------
-# User categories
-# -------------------------------------
 
-get '/categories' do
-  content_type :json 
-
-  current_user.Categories.references( :category_types ).all.to_json
-end
-
-get '/users' do
-  content_type :json
-
-
-end
 
 
 

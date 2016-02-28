@@ -39,8 +39,10 @@ $(document).ready(function(){
 
 //adds categories to User cards from db
 
-  $.get("/categories", function(data){
+  $.get("/cats", function(data){
   console.log("User categories: ", data);
+  //loop through users
+  //loop through categories, add each to user class
   
   });
 
