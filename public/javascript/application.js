@@ -66,7 +66,7 @@ $("#power-on").on("click", function(x){
     if (data.online) {
       console.log("offline: ", data);
       $(this).addClass("user-offline");
-      $("#create-room").removeClass("hidden");
+      $("#butt2").removeClass("hidden");
       $("#power-on").removeClass("on");
       $("#power-on").addClass("off");
       $("#user-status-tag").removeClass("online");
@@ -77,7 +77,7 @@ $("#power-on").on("click", function(x){
     } else {
       console.log("online: ", data);
       $(this).addClass("user-online");
-      $("#create-room").removeClass("hidden");
+      $("#butt2").removeClass("hidden");
       $("#power-on").removeClass("off");
       $("#power-on").addClass("on");
       $("#user-status-tag").removeClass("offline");
