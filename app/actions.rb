@@ -89,6 +89,7 @@ end
 
 get '/login' do
   if current_user
+    current_user.update(is_online: false)
     redirect '/'
   else
     erb :'sessions/login'
