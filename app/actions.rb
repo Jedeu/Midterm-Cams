@@ -20,7 +20,7 @@ end
 # Homepage (Root path)
 get '/' do
   if current_user
-    @users = User.all
+    @users = User.all.where("id != ?", current_user.id)
     erb :index
   else
     redirect '/login'
@@ -36,9 +36,10 @@ get '/user/settings' do
 end
 
 post '/user/save_settings' do
-  erb :'user/edit'
+  @interest = Interest.create(user: current_user, category: Category.find_by(tag: params[:category].capitalize))
+  redirect '/user/settings'
 end
-
+  
 # -------------------------------------
 # Users / Profile
 # -------------------------------------
@@ -73,9 +74,10 @@ end
 get '/rooms/:id/show' do
   @room = Room.find(params[:id])
   @in_room = true
-  # @status = "online"
+  @status = "online"
   erb :'/rooms/create'
 end
+
 
 get '/rooms/:id/join' do
     @room = Room.find(params[:id])

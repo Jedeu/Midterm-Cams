@@ -18,27 +18,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     <script src="/javascript/application.js"></script>
   </head>
-<body>
+
 
   <!-- Top Navbar -->
-  <nav class="dark-pattern">
+  <nav class="dark-pattern fixed">
     <div class="nav-wrapper container">
       <ul id="nav-mobile" class="right">
         <div class="row">
 
         <% if current_user %>
-          <% if current_user.is_online %>
-            <% @create_room = "visible" %>
-          <% else %>
-            <% @create_room = "hidden" %>
-          <% end %>
-            <li id="create-room" data-host="<%= current_user.has_taught %>"><a href="/rooms/create" target="_blank" class="waves-effect waves-light rounded-btn green accent-4 btn <%= @create_room %>">Create Room</a></li>
 
            <% if @in_room %>
             <li><a id="timer_button" class="waves-effect waves-light rounded-btn green accent-4 btn tooltipped" data-position="left" data-delay="50" data-tooltip="Timer will begin"><span id="timer_text">Start Session</span></a></li>
             <li><a href="/host_room" id="leave-room" href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="End Session"><i id="end-session" class="fa fa-power-off fa-2x"></i></a></li>
           <% else %>
-            <li><a class='dropdown-button hide-on-med-and-down' href='#' data-beloworigin='true' data-activates='dropdown1'><%= current_user.name.upcase %> <i class="fa fa-chevron-down"></i></a></li>
+            <% if current_user.is_online %>
+              <% @create_room = "visible" %>
+            <% else %>
+              <% @create_room = "hidden" %>
+            <% end %>
+
+            <span id="butt2" class="<%= @create_room %>">
+            <li id="create-room" data-host="<%= current_user.has_taught %>"><a href="/rooms/create" target="_blank" class="waves-effect waves-light rounded-btn green accent-4 btn">Create Room</a></li>
+            </span>
+            <li><a class='dropdown-button hide-on-med-and-down' href='#' data-beloworigin='true' data-activates='dropdown1'><%= current_user.name %> <i class="fa fa-chevron-down"></i></a></li>
               <ul id='dropdown1' class='dropdown-content'>
                 <li><a href="/user/profile"><span class="left">View Profile </span> <i class="fa fa-user right"></i></a></li>
                 <li><a href="/user/settings"><span class="left">Edit Profile </span><i class="fa fa-cog right"></i></a></li>
@@ -51,15 +54,16 @@
             <% else %>
               <% @user_status = "Go Online" %>           
             <% end %>
+
             <% if current_user.is_online %>
-                <% @power_btn = "on" %>
-              <% else %>
-                <% @power_btn = "off" %>
-              <% end %>
+              <% @power_btn = "on" %>
+            <% else %>
+              <% @power_btn = "off" %>
+            <% end %>
+
             <li><a id="status-tip" href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="<%= @user_status %>"><i id="power-on" data-current-user-id="<%= current_user.id %>" class="fa fa-power-off fa-2x <%= @power_btn %>"></i></a></li>
             <!-- end  -->
           <%end%>
-
         <% end %>
 
         </div>
@@ -82,7 +86,7 @@
       <li class="filter" id="Sports"><a href="#!">Sports</a></li>
       <li class="filter" id="Gaming"><a href="#!">Gaming</a></li>
       <li class="filter" id="Food"><a href="#!">Food</a></li>
-      <li><a class="modal-trigger" id="href="#explicit">Adult</a></li>
+      <li><a class="modal-trigger" href="#explicit">Adult</a></li>
   </ul>
 <body>
 
@@ -90,7 +94,7 @@
 
 
 
-   <div class="container">
+   <div class="container content">
     <div class="section">
       <div class="section scrollspy">
         <div class="row">
@@ -104,6 +108,28 @@
   </div> <!-- /container -->
 
 
-</body>
+
+
+
+  <!-- Explicit Modal  -->
+  <div class="explicit-modal">
+    <div id="explicit" class="modal">
+      <div class="modal-content center">
+        <h4><strong>WARNING! 18+ CONTENT</strong></h4>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam voluptate explicabo soluta atque nesciunt alias possimus vero. Facere qui nam necessitatibus quia ex ab eaque, consectetur repudiandae odit iste, quaerat!</p>
+        <a class="waves-effect red darken-4 rounded-btn btn">Proceed</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a class="modal-close waves-effect red darken-4 rounded-btn btn">No Thanks</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  </body>
 </html>
 

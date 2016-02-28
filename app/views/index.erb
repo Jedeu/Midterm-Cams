@@ -65,13 +65,18 @@
 
 
 
-
 <!-- Teacher Profile Modal -->
 <div id="modal<%= user.id %>" class="modal modal-fixed-footer">
   <div class="modal-header white">
     <div class="right modal-btns">
     <a class="waves-effect waves-light btn dark grey rounded-btn lighten-3">Message</a>&nbsp&nbsp&nbsp
-    <a class="waves-effect waves-light btn green accent-4 rounded-btn btn tooltipped" data-position="top" data-delay="50" data-tooltip="Connect with <%= user.name %>">Connect Now</a>
+    
+    <% @room = Room.where(teacher_id: user.id).last %>
+    <% if @room %>
+      <% @room_number = @room.id %>
+      <a href="rooms/<%= @room_number %>/show" class="waves-effect waves-light btn green accent-4 rounded-btn btn tooltipped" data-position="top" data-delay="50" data-tooltip="Connect with <%= user.name %>">Connect Now</a>
+    <% end %>
+    
     </div>
     <div class="clearfix"></div>
     <div class="row">
@@ -141,8 +146,6 @@
     </div>
   <% end %>  
       
-
-
 
 
 

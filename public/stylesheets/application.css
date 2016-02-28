@@ -10,6 +10,24 @@ body {
   background: url("/images/themes/bg.png") repeat;
 }
 
+.content {
+  top: 100px;
+  padding-top: 50px;
+}
+
+nav {
+  z-index: 999;
+}
+
+hr {
+  margin-bottom: 20px;
+  border-top: 1px solid black;
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
+  background: none;
+}
+
 .hidden {
   visibility: hidden;
 }
@@ -17,6 +35,9 @@ body {
 .visible {
   visibility: visible;
 }
+ .fixed {
+  position: fixed;
+ }
 
 /* ************* Do not modify ************* */
 
@@ -34,8 +55,6 @@ body {
 .white {
   color: white;
 }
-
-
 
 /* ************* Navbar ************* */
 
@@ -145,6 +164,20 @@ nav ul a:hover {
   color: #444;
 }
 
+/* ************* Login ************* */
+
+.login-form {
+  margin-top: 150px;
+}
+
+.signup-form {
+  margin-top: 100px;
+}
+
+.form-header {
+  margin-left: 20px;
+}
+
 /* ************* Adult Modal ************* */
 
 .explicit-modal .modal {
@@ -224,6 +257,16 @@ nav ul a:hover {
 }
 
 .teacher-categories .chip {
+  margin-bottom: 5px;
+}
+
+.specialties {
+  border-left: 1px solid black;
+  padding-left: 30px;
+  min-height: 210px;
+}
+
+.specialties .chip {
   margin-bottom: 5px;
 }
 
