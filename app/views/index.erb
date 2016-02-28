@@ -21,7 +21,9 @@
   <a class="modal-trigger" href="#modal<%= user.id %>">
     <div class="col s12 m4">
       <div id="parent">
-        <div class="card">
+        <% class_string='' %>
+        <% user.categories.each {|c| class_string+= ' '+c.tag} %>
+        <div class="card <%= class_string%> ">
         <% if user.is_online %>
           <div id="user-status-tag" class="online"><p>ONLINE</p></div>
         <% else %>

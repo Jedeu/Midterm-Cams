@@ -37,22 +37,11 @@ $(document).ready(function(){
     $('body').addClass("theme-7");
   });
 
-//adds categories to User cards from db
-
-  $.get("/cats", function(data){
-  console.log("User categories: ", data);
-  //loop through users
-  //loop through categories, add each to user class
-  
-  });
-
 //Filtering by categories
 var filters = $('.filter').click(function() {
-  if (this.id == 'all') {
-    console.log("clicked all");
+  if (this.id == 'All') {
     $("#parent > div:first-of-type").fadeIn(450);
   } else {
-    console.log("clicked "+ this.id)
     var el = $('.' + this.id).fadeIn(450);
     $("#parent > div:first-of-type").not(el).hide();
   }
