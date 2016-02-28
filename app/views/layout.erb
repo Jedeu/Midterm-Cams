@@ -18,10 +18,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     <script src="/javascript/application.js"></script>
   </head>
-<body>
+
 
   <!-- Top Navbar -->
-  <nav class="dark-pattern">
+  <nav class="dark-pattern fixed">
     <div class="nav-wrapper container">
       <ul id="nav-mobile" class="right">
         <div class="row">
@@ -37,6 +37,7 @@
             <% else %>
               <% @create_room = "hidden" %>
             <% end %>
+
             <span id="butt2" class="<%= @create_room %>">
             <li id="create-room" data-host="<%= current_user.has_taught %>"><a href="/rooms/create" target="_blank" class="waves-effect waves-light rounded-btn green accent-4 btn">Create Room</a></li>
             </span>
@@ -53,15 +54,16 @@
             <% else %>
               <% @user_status = "Go Online" %>           
             <% end %>
+
             <% if current_user.is_online %>
               <% @power_btn = "on" %>
             <% else %>
               <% @power_btn = "off" %>
             <% end %>
+
             <li><a id="status-tip" href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="<%= @user_status %>"><i id="power-on" data-current-user-id="<%= current_user.id %>" class="fa fa-power-off fa-2x <%= @power_btn %>"></i></a></li>
             <!-- end  -->
           <%end%>
-
         <% end %>
 
         </div>
@@ -91,7 +93,7 @@
 
 
 
-   <div class="container">
+   <div class="container content">
     <div class="section">
       <div class="section scrollspy">
         <div class="row">
@@ -107,6 +109,25 @@
 
 
 
-</body>
+  <!-- Explicit Modal  -->
+  <div class="explicit-modal">
+    <div id="explicit" class="modal">
+      <div class="modal-content center">
+        <h4><strong>WARNING! 18+ CONTENT</strong></h4>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam voluptate explicabo soluta atque nesciunt alias possimus vero. Facere qui nam necessitatibus quia ex ab eaque, consectetur repudiandae odit iste, quaerat!</p>
+        <a class="waves-effect red darken-4 rounded-btn btn">Proceed</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a class="modal-close waves-effect red darken-4 rounded-btn btn">No Thanks</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  </body>
 </html>
 

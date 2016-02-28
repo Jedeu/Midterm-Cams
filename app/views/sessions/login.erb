@@ -2,22 +2,25 @@
  .side-nav {
     visibility: hidden;
   }
-
 </style>
 
-<div class="row center">
-<div class="card">
-<h4><strong>Login</strong></h4>
-  <form class="col s6" action="/login" method="post">
+<div class="row">
+<div class="col m6 login-form">
+<h4 class="form-header"><strong>Sign in</strong></h4>
+  <form class="col s12 m12 " action="/login" method="post">
     <div class="row">
-      <div class="input-field col s6">
-        <input placeholder="Username" name="name" type="text" class="validate" value="<%= @user && @user.name %>">
+      <div class="input-field col s12 m12">
+        <input placeholder="Username" name="name" type="text" class="validate">
       </div>
-      <div class="input-field col s6">
+      <div class="input-field col s12 m12">
         <input placeholder="Password" name="password" type="password" class="validate">
       </div>
+      <a href="/signup" class="form-header">Don't have an account? <u>Sign up</u></a>
     </div>
-    <input type="submit" class="waves-effect waves-light orange darken-1 btn">
+    <input type="submit" class="waves-effect waves-light btn green accent-4 rounded-btn btn ">
   </form>
+  </div>
+  <div class="col m6">
+    <!-- <img src="/images/asia.svg"> -->
   </div>
 </div>
