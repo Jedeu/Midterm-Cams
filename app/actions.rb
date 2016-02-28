@@ -73,7 +73,7 @@ end
 get '/rooms/:id/show' do
   @room = Room.find(params[:id])
   @in_room = true
-  # @status = "online"
+  @status = "online"
   erb :'/rooms/create'
 end
 
