@@ -35,6 +35,10 @@ get '/user/settings' do
   erb :'user/edit'
 end
 
+post '/user/settings' do
+  erb :'user/edit'
+end
+
 # -------------------------------------
 # Users / Profile
 # -------------------------------------
@@ -85,6 +89,7 @@ end
 
 get '/login' do
   if current_user
+    current_user.update(is_online: false)
     redirect '/'
   else
     erb :'sessions/login'
