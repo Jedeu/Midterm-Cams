@@ -36,7 +36,7 @@ get '/user/settings' do
 end
 
 post '/user/save_settings' do
-  @interest = Interest.create(user: current_user, category: Category.find_by(tag: params[:category].capitalize))
+  @interest = Interest.create(user: current_user, category: Category.find_by(tag: params[:categories].capitalize))
   redirect '/user/settings'
 end
   
