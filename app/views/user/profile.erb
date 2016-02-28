@@ -1,1 +1,44 @@
-<h1>Profile</h1>
+<div class="row">
+  <div class="col m7"> 
+    <div class="col m4">
+        <img src="/images/default-user.png" class="modal-teacher-pic">
+    </div>
+    <div class="col m5">
+      <h2><strong><%= current_user.name.upcase %></strong></h2>
+      <div class="teacher-rating">
+        <span><i class="fa fa-star fa-2x"></i></span>
+        <span><i class="fa fa-star fa-2x"></i></span>
+        <span><i class="fa fa-star fa-2x"></i></span>
+        <span><i class="fa fa-star fa-2x"></i></span>
+      </div>
+    </div>   
+  </div>
+  <div class="col m5"> 
+      <h6 class="right">Member Since: <strong><%= current_user.created_at.strftime("%b %d, %Y") %></strong></h6><br><br>
+    <div class="right modal-btns">
+      <% @room_number = Room.where(teacher_id: current_user.id).last.id %>
+      <a class="waves-effect waves-light btn dark grey rounded-btn lighten-3">Message</a>&nbsp&nbsp&nbsp
+      <a href="rooms/<%= @room_number %>/show" class="waves-effect waves-light btn green accent-4 rounded-btn btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Connect with <%= current_user.name %>">Connect Now</a>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+<hr>
+  <div class="col m8">
+  
+    <h5>About</h5>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga error quidem, doloremque nisi quis nobis eveniet illum praesentium asperiores! Labore vel aspernatur harum voluptates. Iusto sit assumenda officia, natus aspernatur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat culpa fuga, molestias reprehenderit cumque rem modi rerum totam. Dolores ab accusamus, explicabo facere veritatis eligendi eius quis ipsam. Et, consectetur. Placeat culpa fuga, molestias reprehenderit cumque rem modi rerum totam. Dolores ab accusamus, explicabo facere veritatis eligendi eius quis ipsam. Et, consectetur.</p>
+  </div>
+  <div class="col m4">
+    <div class="specialties">
+      <h5>Specialties</h5>
+      <% current_user.categories.each do |category| %>
+        <div class="chip"><%= category.tag %></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<hr>

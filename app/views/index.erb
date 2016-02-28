@@ -55,10 +55,13 @@
   <div class="modal-header white">
     <div class="right modal-btns">
     <a class="waves-effect waves-light btn dark grey rounded-btn lighten-3">Message</a>&nbsp&nbsp&nbsp
-    <% if user.host_rooms %>
-    <% @room_number = Room.where(teacher_id: user.id).last.id %>
-    <a href="rooms/<%= @room_number %>/show" class="waves-effect waves-light btn green accent-4 rounded-btn btn tooltipped" data-position="top" data-delay="50" data-tooltip="Connect with <%= user.name %>">Connect Now</a>
+    
+    <% @room = Room.where(teacher_id: user.id).last %>
+    <% if @room %>
+      <% @room_number = @room.id %>
+      <a href="rooms/<%= @room_number %>/show" class="waves-effect waves-light btn green accent-4 rounded-btn btn tooltipped" data-position="top" data-delay="50" data-tooltip="Connect with <%= user.name %>">Connect Now</a>
     <% end %>
+    
     </div>
     <div class="clearfix"></div>
     <div class="row">
@@ -145,15 +148,4 @@
 
 
 
-<!-- Explicit Modal  -->
-<div class="explicit-modal">
-  <div id="explicit" class="modal">
-    <div class="modal-content center">
-      <h4><strong>WARNING! 18+ CONTENT</strong></h4>
-      <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam voluptate explicabo soluta atque nesciunt alias possimus vero. Facere qui nam necessitatibus quia ex ab eaque, consectetur repudiandae odit iste, quaerat!</p>
-      <a class="waves-effect red darken-4 btn">Proceed</a>&nbsp&nbsp&nbsp&nbsp&nbsp
-      <a class="modal-close waves-effect red darken-4 btn">No Thanks</a>
-    </div>
-  </div>
-</div>
+
