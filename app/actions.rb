@@ -162,9 +162,18 @@ end
 # User categories
 # -------------------------------------
 
-# post '/categories' do
-#   content_type :json 
-#   return .to_json
+get '/categories' do
+  content_type :json 
+
+  current_user.Categories.references( :category_types ).all.to_json
+end
+
+get '/users' do
+  content_type :json
 
 
-# end
+end
+
+
+
+

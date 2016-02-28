@@ -39,7 +39,10 @@ $(document).ready(function(){
 
 //adds categories to User cards from db
 
-
+  $.get("/categories", function(data){
+  console.log("User categories: ", data);
+  
+  });
 
 //Filtering by categories
 var filters = $('.filter').click(function() {
