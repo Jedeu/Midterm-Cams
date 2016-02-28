@@ -35,6 +35,10 @@ get '/user/settings' do
   erb :'user/edit'
 end
 
+post '/user/settings' do
+  erb :'user/edit'
+end
+
 # -------------------------------------
 # Users / Profile
 # -------------------------------------

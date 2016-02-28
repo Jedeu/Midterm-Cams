@@ -1,1 +1,43 @@
 <h1>Edit Profile</h1>
+
+<!-- <div class="row"> -->
+    <form action="/login" method="post">
+      <div class="col m5">
+        <div class="input-field">
+          <input disabled id="disabled" type="text" class="validate" value="<%= current_user.name %>">
+          <label for="email">Username</label>
+        </div>
+
+        <div class="input-field">
+          <input placeholder="Email" name="email" id="email" type="email" class="validate" value="<%= current_user.email %>">
+          <label for="email">Email</label>
+        </div>
+
+
+        <div class="input-field">
+          <input placeholder="Password" name="password" id="password" type="password" class="validate">
+          <label for="password">New Password</label>
+        </div>
+
+      <div class="input-field">
+        <select multiple>
+          <option value="" disabled selected>Choose Categories</option>
+          <option value="computers">Computers</option>
+          <option value="finance">Finance</option>
+          <option value="legal">Legal</option>
+          <option value="design">Design</option>
+          <option value="sports">Sports</option>
+          <option value="gaming">Gaming</option>
+          <option value="food">Food</option>
+          <option value="adult">Adult</option>
+        </select>
+      </div>
+    <input type="submit" class="waves-effect waves-light rounded-btn green accent-4 btn">
+    </div>
+  </form>
+  <!-- </div> -->
+  <div class="col m7">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla soluta numquam accusantium, eaque natus est aperiam velit iste enim sint optio ipsa consectetur odio reiciendis, saepe, quos error id itaque!</p>
+  </div>  
+
+

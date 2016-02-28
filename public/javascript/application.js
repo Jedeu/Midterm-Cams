@@ -1,6 +1,8 @@
 $(document).ready(function(){
   $('.modal-trigger').leanModal();
   $('.tooltipped').tooltip({delay: 50});
+  $('select').material_select();
+        
 
   $('#theme-0').click(function(){
     $('body').removeClass();
