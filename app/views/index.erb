@@ -36,7 +36,7 @@
           </span>
         </div>
         <div class="card-content">
-          <p id="card-username"><strong><%= user.name %></strong></p>
+          <p id="card-username"><strong><%= user.name.upcase %></strong></p>
           <% if user.has_taught %>
             <span class="chip right in-chat-chip "><p class="small2">BUSY</p></span>
           <% end %>

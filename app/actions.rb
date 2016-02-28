@@ -35,7 +35,7 @@ get '/user/settings' do
   erb :'user/edit'
 end
 
-post '/user/settings' do
+post '/user/save_settings' do
   erb :'user/edit'
 end
 
