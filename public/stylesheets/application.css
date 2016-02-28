@@ -10,6 +10,14 @@ body {
   background: url("/images/themes/bg.png") repeat;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
 /* ************* Do not modify ************* */
 
 #hacker {
