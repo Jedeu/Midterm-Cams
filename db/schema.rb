@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160227235642) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "tag"
   end
@@ -43,12 +46,12 @@ ActiveRecord::Schema.define(version: 20160227235642) do
     t.integer  "balance",     default: 0
     t.integer  "hourly_rate", default: 0
     t.text     "bio"
-    t.integer  "time_taught", default: 0
     t.boolean  "has_taught",  default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "email"
     t.boolean  "is_online",   default: false
+    t.integer  "time_taught", default: 0
   end
 
 end

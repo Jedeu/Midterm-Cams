@@ -102,13 +102,31 @@ body {
   color: white;
 }
 
+#power-on:hover {
+  color: #00c853;
+}
+
+#end-session {
+  color: white;
+}
+
+#end-session:hover {
+  color: red;
+}
+
+
+.on {
+  color: #00c853 !important;
+}
+
+.off {
+  color: white !important;
+}
+
 #user-online {
   color: #00c853 !important;
 }
 
-#power-on:hover {
-  color: #00c853;
-}
 nav ul a:hover {
   background: none;
 }
@@ -198,7 +216,13 @@ nav ul a:hover {
 .teacher-categories .chip {
   margin-bottom: 5px;
 }
-.modal-btns .btn {
+
+#create-room .btn {
+  height: 25px;
+  line-height: 1.8;
+}
+
+.rounded-btn {
   border-radius: 20px;
 }
 .user-review {
@@ -213,8 +237,26 @@ nav ul a:hover {
   padding: 10px;
 }
 
+.card .card-title {
+  color: #ffab40 !important;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
 .card-rating {
   color: #ffab40;
+}
+
+.in-chat-chip {
+  margin-top: -20px;
+  border: 1px solid  #252529;
+}
+
+#card-username {
+  border-bottom: 1px solid #252529;
+  color:  #252529;
+  font-weight: bold;
+  padding-bottom: 3px;
+  margin-bottom: 3px;
 }
 
 .small {
@@ -222,8 +264,13 @@ nav ul a:hover {
   margin-top: -1px;
 }
 
+.small2 {
+  font-weight: bold;
+  font-size: 13px;
+}
+
 .online {
-  height: auto;
+  height: 50px;
   width: auto;
   padding-left: 10px; 
   padding-right: 10px;
@@ -233,15 +280,17 @@ nav ul a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   background-color: #4dc658;
   color: white;
   text-align: center;
+  border: 2px solid white;
+  border-top: none;
 }
 
 .offline {
-  height: auto;
+  height: 50px;
   width: auto;
   padding-left: 10px; 
   padding-right: 10px;
@@ -251,18 +300,13 @@ nav ul a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   background-color: #616161;
   color: white;
   text-align: center;
-}
-
-.smallz {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-weight: bold;
-  font-size: 10px;
+  border: 2px solid white;
+  border-top: none;
 }
 
 .online p {
@@ -271,6 +315,12 @@ nav ul a:hover {
 }
 
 .offline p {
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.status-text {
+  padding-top: 10px;
   font-weight: bold;
   font-size: 10px;
 }
