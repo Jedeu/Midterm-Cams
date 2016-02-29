@@ -7,6 +7,8 @@ require 'active_support/all'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/contrib/all' # Requires cookies, among other things
+require 'gon-sinatra'
+Sinatra::register Gon::Sinatra
 
 require 'pry'
 require 'securerandom'
