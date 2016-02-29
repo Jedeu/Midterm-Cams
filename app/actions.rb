@@ -63,9 +63,6 @@ post '/host_room' do
   content_type :json
   current_user.update(has_taught: true)
   @room = Room.find(params[:id])
-  # if current_user.id = @room.teacher_id
-  #   current_user.update(time_taught: time_taught += params[:js_timer])
-  # end
   {host: true}.to_json
 end
 
@@ -162,6 +159,14 @@ post '/go_online' do
   else
     current_user.update(is_online: true)
     return {online: false}.to_json
+  end
+end
+
+post '/save_timer' do
+  gon.time_in_seconds = 0
+  content_type :json
+  if current_user.id == @room.teacher_id
+    current_user.update(time_taught: time_taught += gon.time_in_seconds)
   end
 end
 

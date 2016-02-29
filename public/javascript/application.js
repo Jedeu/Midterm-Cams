@@ -66,6 +66,7 @@ $('#timer_button').one('click', function(){
     document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
     console.log(sec);
   }, 1000);
+  gon.time_in_seconds += sec;
 });
 
 
@@ -103,10 +104,7 @@ $("#power-on").on("click", function(x){
   });
 });
 
-$("#leave-room").on("click", function(x) {
-  console.log("Teacher id is", $(this).data("teacher-id"));
-  console.log("User id is", $(this).data("user-id"));
-});
+
 
 
 // When the 'Create Room' button is clicked this runs.
