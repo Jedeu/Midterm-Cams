@@ -53,7 +53,7 @@ var filters = $('.filter').click(function() {
 $('#leave-room').on('click', function(x){
   x.stopPropagation();
   $('#timer_button').hide();
-  $('.preloader-wrapper').css("display", "inline-flex");
+  // $('.preloader-wrapper').css("display");
   
   console.log(typeof sec);
   $.ajax({
@@ -114,8 +114,6 @@ $("#power-on").on("click", function(x){
     }
   });
 });
-
-
 
 
 // When the 'Create Room' button is clicked this runs.
