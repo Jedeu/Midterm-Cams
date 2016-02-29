@@ -56,6 +56,10 @@ hr {
   color: white;
 }
 
+.cam-green {
+  color: #4dc658;
+}
+
 /* ************* Navbar ************* */
 
  #logo {
@@ -163,6 +167,58 @@ nav ul a:hover {
 .dropdown-content li>a, .dropdown-content li>span {
   color: #444;
 }
+
+/* ************* Account Balance / Load Account ************* */
+
+ .account-balance {
+  border-radius: 5px 5px 0 0;
+  border-bottom: none;
+  bottom: 0;
+  left: 780px;
+  position: fixed;
+  background: url("/images/nav-top.jpg");
+  color: white;
+  padding: 10px 20px;
+  z-index: 1000;
+ }
+
+ .payment-body {
+  padding: 40px 60px 40px 20px !important;
+ }
+
+ .card_number {
+  margin-left: -10px !important;
+ }
+
+ [type="radio"]:checked+label:after {
+  border-color: #00c853;
+  background-color: #00c853;
+ }
+
+ .margin-right-10 {
+  margin-right: 10px !important;
+ }
+
+.margin-right-25 {
+  margin-right: 25px !important;
+ }
+
+ #bottom-stripe {
+  width: 100%;
+  bottom: 0;
+  background: url("/images/nav-top.jpg");
+  height: 15px;
+  position: fixed;
+  z-index: 999;
+  /*box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);*/
+ }
+
+ #balance-btn {
+  margin-right: 10px;
+  width: 215px;
+  height: 25px;
+  line-height: 1.8;
+ }
 
 /* ************* Login ************* */
 

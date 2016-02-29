@@ -1,5 +1,5 @@
 <!-- Themes -->
-<div  class="fixed-action-btn verticle" style="top: 100px; right: 120px;">
+<div  class="fixed-action-btn verticle hide-on-med-and-down " style="top: 100px; right: 120px;">
   <a class="btn-floating btn-medium grey darken-4"><i class="large material-icons">add</i></a>
   <ul>
     <li><a id="theme-1" class="btn-floating grey darken-3">1</a></li>
@@ -16,7 +16,7 @@
 
 
 
-<% @users.each do |user| %>
+<% @ordered_users.each do |user| %>
   <!-- Teacher Card -->
   <a class="modal-trigger" href="#modal<%= user.id %>">
     <div class="col s12 m4">
@@ -32,30 +32,26 @@
             <div class="card-image behind">
             <img src="http://placehold.it/350x200">
             <span class="card-title card-rating">
+            <% @rating = user.rating %>
+            <% @rating.times do %>
               <span><i class="fa fa-star"></i></span>
-              <span><i class="fa fa-star"></i></span>
-              <span><i class="fa fa-star"></i></span>
-              <span><i class="fa fa-star"></i></span>
+              <% end %>
             </span>
           </div>
           <div class="card-content">
             <p id="card-username"><strong><%= user.name %></strong></p>
             <% if user.has_taught %>
-              <span class="chip right in-chat-chip "><p class="small2">BUSY</p></span>
+              <span class="chip right in-chat-chip "><p class="small2">IN ROOM</p></span>
             <% end %>
-            <p class="small2"><%= user.time_taught %> hours chatted</p>
+            <p class="small2">
+            <% @time_taught = user.time_taught %> 
+            <% if @time_taught < 3600 %>
+                <%= (@time_taught / 60).round() %> minutes chat time
+            <% else %>
+                <%= ((@time_taught / 60) / 60).round() %> hours chat time
+            <% end %>
+            </p>
           </div>
-          <!-- <div class="card-action dark-pattern">
-          <div class="chip">
-            <div class="rating card-rating">
-              <span><i class="fa fa-star"></i></span>
-              <span><i class="fa fa-star"></i></span>
-              <span><i class="fa fa-star"></i></span>
-              <span><i class="fa fa-star"></i></span>
-              <span><i class="fa fa-star"></i></span>           
-            </div>
-          </div>
-          </div> -->
         </div> <!-- /card -->
       </div>
     </div>
@@ -101,19 +97,34 @@
       <div class="modal-body">
         <div class="row">
           <div class="col m3">
+          <h5>Specialties</h5>
+          <hr>
             <div class="card">
               <div class="card-content teacher-categories">
-              <% user.categories.each do |category| %>
-                <div class="chip"><%= category.tag %></div>
-              <% end %>
+                <% if user.categories.count == 0 %>
+                  Specialities not specified.
+                <% else %>
+                  <% user.categories.each do |category| %>
+                    <div class="chip"><%= category.tag %></div>
+                  <% end %>
+                <% end %>
+              
               </div>
             </div>
           </div>
           <!-- Bio -->
           <div class="col m9">
+          <h5>About Me</h5>
+          <hr>
             <div class="card">
               <div class="card-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga error quidem, doloremque nisi quis nobis eveniet illum praesentium asperiores! Labore vel aspernatur harum voluptates. Iusto sit assumenda officia, natus aspernatur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat culpa fuga, molestias reprehenderit cumque rem modi rerum totam. Dolores ab accusamus, explicabo facere veritatis eligendi eius quis ipsam. Et, consectetur. Placeat culpa fuga, molestias reprehenderit cumque rem modi rerum totam. Dolores ab accusamus, explicabo facere veritatis eligendi eius quis ipsam. Et, consectetur.</p>
+                <p>
+                <% if user.bio == nil %>
+                  <%= user.name %> has not written anything about themselves yet :(
+                <% else %>
+                  <%= user.bio %>
+                <% end %>
+                </p>
               </div>
             </div>
           </div>
@@ -126,13 +137,12 @@
            <div class="card">
               <div class="card-content">
                   <h6 class="left"><strong>Anonymous</strong> | Feb 20, 2016</h6>
-                  <div class="chip right">
-                    <div class="rating">
-                      <span><i class="fa fa-star-o"></i></span>
-                      <span><i class="fa fa-star-o"></i></span>
-                      <span><i class="fa fa-star-o"></i></span>
-                      <span><i class="fa fa-star-o"></i></span>
-                      <span><i class="fa fa-star-o"></i></span>            
+                  <div class="right">
+                    <div class="teacher-rating">
+                      <span><i class="fa fa-star fa-lg"></i></span>
+                      <span><i class="fa fa-star fa-lg"></i></span>
+                      <span><i class="fa fa-star fa-lg"></i></span>
+                      <span><i class="fa fa-star fa-lg"></i></span>           
                     </div>
                   </div>
                   <div class="clearfix"></div>

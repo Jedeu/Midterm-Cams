@@ -20,11 +20,29 @@ end
 # Homepage (Root path)
 get '/' do
   if current_user
+    @show_balance = true
     @users = User.all.where("id != ?", current_user.id)
+    # This orders the users and makes the users who are online
+    # appear at the top of the list.
+    @ordered_users = []
+    @users.each do |user|
+      if user.is_online == true
+        @ordered_users.unshift(user)
+      else
+        @ordered_users << user
+      end
+    end
+    @ordered_users
     erb :index
   else
     redirect '/login'
   end
+end
+
+# Temporaliy put here for posting the "Load Account" button/form
+# located on the bottom of the layouts.erb
+post '/' do
+  redirect '/'
 end
 
 # -------------------------------------
@@ -78,12 +96,18 @@ get '/rooms/:id/show' do
   erb :'/rooms/create'
 end
 
-
 get '/rooms/:id/join' do
     @room = Room.find(params[:id])
     @room.update(user_id: current_user.id)
     # set the current_user to @room.user
     redirect "/rooms/#{@room.id}/show"
+end
+
+# Room final review
+get '/rooms/review' do
+  # @room = Room.find(params[:id])
+  @show_balance = true
+  erb :'/rooms/review'
 end
 
 # -------------------------------------
@@ -171,5 +195,4 @@ post '/save_timer' do
   end
 
 end
-
 
