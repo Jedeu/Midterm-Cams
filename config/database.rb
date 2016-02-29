@@ -7,8 +7,8 @@ configure do
   ActiveRecord::Base.establish_connection(
     adapter: 'postgresql',
     database: 'dd4g8pa0t2r0e0',
-    username: 'rvaouvsgssbyzl',
-    password: 'FUrb1aGjjMNi0fK94H_1MnVsb4',
+    username: 'Suhduude',
+    password: 'Iunno',
     host: 'ec2-54-204-3-200.compute-1.amazonaws.com',
     port: '5432',
     pool: 5,
