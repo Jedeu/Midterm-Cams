@@ -29,6 +29,18 @@
         <% if current_user %>
 
            <% if @in_room %>
+            <div  style="display: none" style= "top:10px" class="preloader-wrapper small active">
+              <div class="spinner-layer spinner-white-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+
             <li><a id="timer_button" class="waves-effect waves-light rounded-btn green accent-4 btn tooltipped" data-position="left" data-delay="50" data-tooltip="Timer will begin"><span id="timer_text">Start Session</span></a></li>
 
             <li><a href="/rooms/review" id="leave-room" href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="End Session"><i id="end-session" class="fa fa-power-off fa-2x"></i></a></li>
@@ -49,6 +61,7 @@
                 <li class="divider"></li>
                 <li><a href="/logout"><span class="left">Logout </span><i class="fa fa-power-off right"></i></a></li>
               </ul>
+             
             <!-- No comment, it works :P -->
             <% if current_user.is_online %>
               <% @user_status = "Go Offline" %>
