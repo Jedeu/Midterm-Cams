@@ -62,7 +62,6 @@ end
 post '/host_room' do
   content_type :json
   current_user.update(has_taught: true)
-  @room = Room.find(params[:id])
   {host: true}.to_json
 end
 
@@ -163,11 +162,14 @@ post '/go_online' do
 end
 
 post '/save_timer' do
-  gon.time_in_seconds = 0
   content_type :json
+  seconds=params[:sec].to_i
+  @room = Room.last
   if current_user.id == @room.teacher_id
-    current_user.update(time_taught: time_taught += gon.time_in_seconds)
+    current_user.update(time_taught: current_user.time_taught+seconds)
+    @room.update(class_time: seconds )
   end
+
 end
 
 

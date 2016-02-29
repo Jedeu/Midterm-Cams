@@ -66,9 +66,17 @@ $('#timer_button').one('click', function(){
     document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
     console.log(sec);
   }, 1000);
-  gon.time_in_seconds += sec;
 });
 
+$('#leave-room').on('click', function(x){
+  x.stopPropagation();
+  console.log(typeof sec);
+  $.ajax({
+      type: "POST",
+      url: "/save_timer",       
+      data: {sec: sec}
+  });
+});
 
 // Whent the Power Button in the Nav is clicked it takes the Users is_online
 // and changes it to True or False depending if the user is online.
