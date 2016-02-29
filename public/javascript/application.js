@@ -50,6 +50,18 @@ var filters = $('.filter').click(function() {
 })
 
 
+$('#leave-room').on('click', function(x){
+  x.stopPropagation();
+  $('#timer_button').hide();
+  $('.preloader-wrapper').css("display", "inline-flex");
+  
+  console.log(typeof sec);
+  $.ajax({
+      type: "POST",
+      url: "/save_timer",       
+      data: {sec: sec}
+  });
+});
 
 // Timer code in seconds.
 function pad(val) {
@@ -68,15 +80,6 @@ $('#timer_button').one('click', function(){
   }, 1000);
 });
 
-$('#leave-room').on('click', function(x){
-  x.stopPropagation();
-  console.log(typeof sec);
-  $.ajax({
-      type: "POST",
-      url: "/save_timer",       
-      data: {sec: sec}
-  });
-});
 
 // Whent the Power Button in the Nav is clicked it takes the Users is_online
 // and changes it to True or False depending if the user is online.
