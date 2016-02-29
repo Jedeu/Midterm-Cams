@@ -33,13 +33,14 @@
             <% if user.image == nil %>
               <img src="http://placehold.it/350x200">
             <% else %>
+            <!-- <img src="http://placehold.it/350x200"> -->
               <%= user.image %>
             <% end %>
             <span class="card-title card-rating">
             <% @rating = user.rating %>
             <% @rating.times do %>
               <span><i class="fa fa-star"></i></span>
-              <% end %>
+            <% end %>
             </span>
           </div>
           <div class="card-content">
