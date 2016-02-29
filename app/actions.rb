@@ -191,7 +191,7 @@ post '/save_timer' do
   @room = Room.last
   if current_user.id == @room.teacher_id
     current_user.update(time_taught: current_user.time_taught+seconds)
-    @room.update(class_time: seconds )
+    @room.update(classtime: seconds )
   end
 
 end
