@@ -43,7 +43,7 @@ get '/user/settings' do
 end
 
 post '/user/save_settings' do
-  @interest = Interest.create(user: current_user, category: Category.find_by(tag: params[:category].capitalize))
+  @interest = Interest.create(user: current_user, category: Category.find_by(tag: params[:categories].capitalize))
   redirect '/user/settings'
 end
   
@@ -63,7 +63,7 @@ get '/rooms/create' do
   @room = Room.new
   @room.host = current_user
   @room.save
-  redirect to "/rooms/#{@room.id}/show"
+  redirect "/rooms/#{@room.id}/show"
 end
 
 post '/host_room' do
@@ -85,11 +85,16 @@ get '/rooms/:id/show' do
   erb :'/rooms/create'
 end
 
+get '/rooms/:id/join' do
+    @room = Room.find(params[:id])
+    # set the current_user to @room.user
+    redirect "/rooms/#{@room.id}/show"
+end
+
 # Room final review
 get '/rooms/review' do
   # @room = Room.find(params[:id])
   erb :'/rooms/review'
-end
 
 # -------------------------------------
 # Login
@@ -165,3 +170,21 @@ post '/go_online' do
     return {online: false}.to_json
   end
 end
+
+
+
+# -------------------------------------
+# Timer
+# -------------------------------------
+
+post '/update_timer' do
+  content_type :json 
+  
+end
+
+
+
+
+
+
+

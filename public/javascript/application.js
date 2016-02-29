@@ -37,6 +37,19 @@ $(document).ready(function(){
     $('body').addClass("theme-7");
   });
 
+//Filtering by categories
+var filters = $('.filter').click(function() {
+  if (this.id == 'All') {
+    $("#parent > div:first-of-type").fadeIn(450);
+  } else {
+    var el = $('.' + this.id).fadeIn(450);
+    $("#parent > div:first-of-type").not(el).hide();
+  }
+  filters.removeClass('active');
+  $(this).addClass('active');
+})
+
+
 
 // Timer code in seconds.
 function pad(val) {
@@ -46,7 +59,7 @@ function pad(val) {
 var sec = 0;
 $('#timer_button').one('click', function(){
   $('#timer_text').replaceWith("<span id=\"minutes\">00</span>:<span id=\"seconds\">00</span>");
-  console.log("clicked")
+  console.log("clicked");
   var timer = setInterval(function () {
     document.getElementById("seconds").innerHTML = pad(++sec % 60);
     document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
@@ -88,6 +101,7 @@ $("#power-on").on("click", function(x){
     }
   });
 });
+
 
 // When the 'Create Room' button is clicked this runs.
 // It changes the User Host value to 'True'.
