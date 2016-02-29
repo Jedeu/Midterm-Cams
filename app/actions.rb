@@ -96,6 +96,7 @@ get '/rooms/review' do
   # @room = Room.find(params[:id])
   @show_balance = true
   erb :'/rooms/review'
+end
 
 # -------------------------------------
 # Login
