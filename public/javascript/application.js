@@ -64,7 +64,7 @@ $("#power-on").on("click", function(x){
   var userId = $(this).data("current-user-id")
   $.post("/go_online", {user_id: userId}, function(data){ 
     if (data.online) {
-      console.log("offline: ", data);
+      // console.log("offline: ", data);
       $(this).addClass("user-offline");
       $("#butt2").removeClass("hidden");
       $("#power-on").removeClass("on");
@@ -75,7 +75,7 @@ $("#power-on").on("click", function(x){
       $("#status-tip").attr("data-tooltip", "Go Online");
       $("#create-room").fadeOut("slow");
     } else {
-      console.log("online: ", data);
+      // console.log("online: ", data);
       $(this).addClass("user-online");
       $("#butt2").removeClass("hidden");
       $("#power-on").removeClass("off");

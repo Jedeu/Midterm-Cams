@@ -20,7 +20,7 @@ end
 # Homepage (Root path)
 get '/' do
   if current_user
-    @index = true
+    @show_balance = true
     @users = User.all.where("id != ?", current_user.id)
     erb :index
   else
@@ -88,6 +88,7 @@ end
 # Room final review
 get '/rooms/review' do
   # @room = Room.find(params[:id])
+  @show_balance = true
   erb :'/rooms/review'
 end
 
