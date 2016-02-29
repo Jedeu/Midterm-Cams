@@ -193,12 +193,19 @@ end
 
 post '/save_timer' do
   content_type :json
-  seconds=params[:sec].to_i
+  seconds = params[:sec].to_i
   @room = Room.last
   if current_user.id == @room.teacher_id
     current_user.update(time_taught: current_user.time_taught+seconds)
     @room.update(classtime: seconds )
   end
+  erb :'/rooms/review'
+end
 
+# Room final review
+get '/rooms/review' do
+  # @room = Room.find(params[:id])
+  @show_balance = true
+  erb :'/rooms/review'
 end
 
