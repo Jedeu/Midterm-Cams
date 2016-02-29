@@ -106,6 +106,9 @@ end
 # Room final review
 get '/rooms/review' do
   # @room = Room.find(params[:id])
+  if current_user.id == Room.last.teacher_id
+    redirect '/'
+  else
   @user = User.find_by(name: "corey")
   @teacher = User.find(Room.last.teacher_id)
   @time = Room.last.classtime
@@ -113,7 +116,8 @@ get '/rooms/review' do
   @total = ((@time * @hourly_rate)/ 3600).round(2)
   @remainder = @user.balance - @total
   @show_balance = true
-  erb :'/rooms/review'
+    erb :'/rooms/review'
+  end
 end
 
 # -------------------------------------
