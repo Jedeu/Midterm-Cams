@@ -30,18 +30,17 @@
 
            <% if @in_room %>
             <li><a id="timer_button" class="waves-effect waves-light rounded-btn green accent-4 btn tooltipped" data-position="left" data-delay="50" data-tooltip="Timer will begin"><span id="timer_text">Start Session</span></a></li>
-            <li><a href="/host_room" id="leave-room" href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="End Session"><i id="end-session" class="fa fa-power-off fa-2x"></i></a></li>
+            <li><a href="/rooms/review" id="leave-room" href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="End Session"><i id="end-session" class="fa fa-power-off fa-2x"></i></a></li>
           <% else %>
             <% if current_user.is_online %>
               <% @create_room = "visible" %>
             <% else %>
               <% @create_room = "hidden" %>
             <% end %>
-
             <span id="butt2" class="<%= @create_room %>">
             <li id="create-room" data-host="<%= current_user.has_taught %>"><a href="/rooms/create" target="_blank" class="waves-effect waves-light rounded-btn green accent-4 btn">Create Room</a></li>
             </span>
-            <li><a class='dropdown-button hide-on-med-and-down' href='#' data-beloworigin='true' data-activates='dropdown1'><%= current_user.name %> <i class="fa fa-chevron-down"></i></a></li>
+            <li><a class='dropdown-button hide-on-med-and-down' href='#' data-beloworigin='true' data-activates='dropdown1'><%= current_user.name.upcase %> <i class="fa fa-chevron-down"></i></a></li>
               <ul id='dropdown1' class='dropdown-content'>
                 <li><a href="/user/profile"><span class="left">View Profile </span> <i class="fa fa-user right"></i></a></li>
                 <li><a href="/user/settings"><span class="left">Edit Profile </span><i class="fa fa-cog right"></i></a></li>
@@ -122,10 +121,59 @@
     </div>
   </div>
 
+    <% if @index == true %>
+    <div class="account-balance right">
+    <a id="balance-btn" href="#payment" class="modal-trigger waves-effect waves-light rounded-btn green accent-4 btn">Account Balance</a>$<%= current_user.balance %>.00</div>
+    <div id="bottom-stripe"></div>
 
+    <!-- Payament Modal  -->
+    <div class="payment-modal">
+      <div id="payment" class="modal">
+        <div class="modal-content center">
+          <h4><strong>WARNING! 18+ CONTENT</strong></h4>
+          <hr>
+          <form action="/" method="post">
+            <div class="col m5 payment-body">
+              <div class="input-field">
+                <input placeholder="First Name" name="first_name" id="first_name" type="text" class="validate">
+                <label for="email">First Name</label>
+              </div>
 
+              <div class="input-field">
+                <input placeholder="Last Name" name="last_name" id="last_name" type="text" class="validate">
+                <label for="email">Last Name</label>
+              </div>
+              
+              <div class="row">
+                <div class="col m7 card_number margin-right-10">
+                  <div class="input-field">
+                    <input placeholder="Card Number" name="card_number" id="card_number" type="text" class="validate">
+                    <label for="email">Card Number</label>
+                  </div>
+                </div>
 
+                <div class="col m2 margin-right-10">
+                  <div class="input-field">
+                    <input placeholder="CSV" name="csv" id="csv" type="text" class="validate">
+                    <label for="email">CSV</label>
+                  </div>
+                </div>
 
+                <div class="col m2">
+                  <div class="input-field">
+                    <input placeholder="Expiry" name="expiry" id="expiry" type="text" class="validate">
+                    <label for="email">Expiry</label>
+                  </div>
+                </div>
+
+              </div>
+              <input type="submit" class="modal-close waves-effect waves-light rounded-btn green accent-4 btn">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <% end %>
 
 
   </body>

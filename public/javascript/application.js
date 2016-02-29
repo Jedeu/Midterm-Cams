@@ -101,5 +101,13 @@ $("#create-room").on("click", function(x){
   });
 });
 
+$("#balance-btn").mouseenter(function() {
+  $("#balance-btn").html("Load Account");
+});
+
+$("#balance-btn").mouseleave(function() {
+  $("#balance-btn").html("Account Balance:");
+});
+
 
 });

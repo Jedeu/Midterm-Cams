@@ -20,11 +20,18 @@ end
 # Homepage (Root path)
 get '/' do
   if current_user
+    @index = true
     @users = User.all.where("id != ?", current_user.id)
     erb :index
   else
     redirect '/login'
   end
+end
+
+# Temporaliy put here for posting the "Load Account" button/form
+# located on the bottom of the layouts.erb
+post '/' do
+  redirect '/'
 end
 
 # -------------------------------------
@@ -76,6 +83,12 @@ get '/rooms/:id/show' do
   @in_room = true
   @status = "online"
   erb :'/rooms/create'
+end
+
+# Room final review
+get '/rooms/review' do
+  # @room = Room.find(params[:id])
+  erb :'/rooms/review'
 end
 
 # -------------------------------------
