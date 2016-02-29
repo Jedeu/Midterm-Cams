@@ -22,6 +22,17 @@ get '/' do
   if current_user
     @show_balance = true
     @users = User.all.where("id != ?", current_user.id)
+    # This orders the users and makes the users who are online
+    # appear at the top of the list.
+    @ordered_users = []
+    @users.each do |user|
+      if user.is_online == true
+        @ordered_users.unshift(user)
+      else
+        @ordered_users << user
+      end
+    end
+    @ordered_users
     erb :index
   else
     redirect '/login'
@@ -181,7 +192,6 @@ end
 
 post '/update_timer' do
   content_type :json 
-  
 end
 
 
