@@ -30,7 +30,11 @@
           <div id="user-status-tag" class="offline"><p>OFFLINE</p></div>
         <% end %>
             <div class="card-image behind">
-            <img src="http://placehold.it/350x200">
+            <% if user.image == nil %>
+              <img src="http://placehold.it/350x200">
+            <% else %>
+              <%= user.image %>
+            <% end %>
             <span class="card-title card-rating">
             <% @rating = user.rating %>
             <% @rating.times do %>
