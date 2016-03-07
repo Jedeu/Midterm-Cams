@@ -1,7 +1,7 @@
-Sinatra
+Cam-Me
 =============
 
-Brought to you by Lighthouse Labs
+An MVP of a cam-to-cam site that allows people to learn skills from experts in various areas.
 
 ## Getting Started
 
