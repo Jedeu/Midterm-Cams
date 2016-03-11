@@ -109,6 +109,7 @@ get '/rooms/review' do
   if current_user.id == Room.last.teacher_id
     redirect '/'
   else
+  #Hard-coded for the MVP presentation, will fix I promise I'm sorry :(
   @user = User.find_by(name: "corey")
   @teacher = User.find(Room.last.teacher_id)
   @time = Room.last.classtime
